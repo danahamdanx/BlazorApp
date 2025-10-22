@@ -1,0 +1,34 @@
+
+@inherits LayoutComponentBase
+@inject NavigationManager Nav
+@inject AppState AppState
+
+<div class="app">
+    <header class="topbar">
+        <h1>LoginTask</h1>
+        <div class="right">
+            @if (AppState.IsAuthenticated)
+            {
+                <span>@AppState.CurrentUser?.Username</span>
+                <button class="btn" @onclick="Logout">Logout</button>
+            }
+            else
+            {
+                <a href="/">Login</a>
+            }
+        </div>
+    </header>
+    <main class="content">
+        @Body
+    </main>
+</div>
+
+@code {
+    protected override void OnInitialized() { }
+
+    private void Logout()
+    {
+        AppState.Logout();
+        Nav.NavigateTo("/");
+    }
+}

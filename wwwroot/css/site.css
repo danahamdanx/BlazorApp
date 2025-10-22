@@ -1,0 +1,16 @@
+
+/* Simple responsive styles */
+body { font-family: Arial, Helvetica, sans-serif; margin:0; background:#f5f7fb; color:#222; }
+.app { max-width:900px; margin:36px auto; background:white; border-radius:12px; box-shadow:0 6px 30px rgba(0,0,0,0.08); overflow:hidden; }
+.topbar { display:flex; justify-content:space-between; align-items:center; padding:16px 20px; background:linear-gradient(90deg,#4b6cb7,#182848); color:white; }
+.topbar h1 { margin:0; font-size:20px; }
+.topbar .right { display:flex; gap:12px; align-items:center; }
+.content { padding:24px; }
+.form { max-width:420px; margin:0 auto; }
+.input { display:block; width:100%; padding:10px 12px; margin:8px 0 16px; border-radius:8px; border:1px solid #d4d9e6; }
+.btn { padding:8px 14px; border-radius:8px; border:none; cursor:pointer; background:#4b6cb7; color:white; }
+.error { color:#b00020; margin:8px 0; }
+.success { color: #0b6; margin:8px 0; }
+.small { font-size:13px; color:#666 }
+.flex { display:flex; gap:8px; align-items:center; }
+@media (max-width:600px){ .app{ margin:12px; } .content{ padding:16px; } }

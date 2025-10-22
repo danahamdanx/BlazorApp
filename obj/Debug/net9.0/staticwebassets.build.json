@@ -1,0 +1,1042 @@
+{
+  "Version": 1,
+  "Hash": "aduwOpvTRUhrAcx3TKL0lum7ztftT0heaERDUtTZAFs=",
+  "Source": "LoginTask",
+  "BasePath": "_content/LoginTask",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "LoginTask\\wwwroot",
+      "Source": "LoginTask",
+      "ContentRoot": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\",
+      "BasePath": "_content/LoginTask",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\2nfz2r92jx-tr7ou5kqyi.gz",
+      "SourceId": "LoginTask",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/LoginTask",
+      "RelativePath": "css/app#[.{fingerprint=tr7ou5kqyi}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\css\\app.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "c0y0b9jxwo",
+      "Integrity": "LMue1Bt7nxcIz29B7Y7IqoRhX941GpPrve9lp/AvtxM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\css\\app.css"
+    },
+    {
+      "Identity": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\frzs60zzov-gm73m6d6jb.gz",
+      "SourceId": "LoginTask",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/LoginTask",
+      "RelativePath": "css/site#[.{fingerprint=gm73m6d6jb}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\css\\site.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "tvlvklu5gz",
+      "Integrity": "iai9O9piHQRF0NoQxuAuTY0amwCP2Zos4narnLt1zqI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\njune1dxx9-k3vhgxysg0.gz",
+      "SourceId": "LoginTask",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/LoginTask",
+      "RelativePath": "js/site#[.{fingerprint=k3vhgxysg0}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\js\\site.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "9jdyraxyu9",
+      "Integrity": "+5OBnxJQqVXT0DL7Ec3g1Kt8pT7NOQSdxgcSGwZuhjA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\css\\app.css",
+      "SourceId": "LoginTask",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\",
+      "BasePath": "_content/LoginTask",
+      "RelativePath": "css/app#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tr7ou5kqyi",
+      "Integrity": "p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\app.css"
+    },
+    {
+      "Identity": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\css\\site.css",
+      "SourceId": "LoginTask",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\",
+      "BasePath": "_content/LoginTask",
+      "RelativePath": "css/site#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gm73m6d6jb",
+      "Integrity": "qLhBnWYQInDj8D1oRJthnVaXWTF+xZpfvDROQIwke6w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\js\\site.js",
+      "SourceId": "LoginTask",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\",
+      "BasePath": "_content/LoginTask",
+      "RelativePath": "js/site#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "k3vhgxysg0",
+      "Integrity": "UPTK5TZ0sg3pThMNUAL5XCpEf+gPL0rePgpdZkpIKEQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\site.js"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "css/app.css",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\2nfz2r92jx-tr7ou5kqyi.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.002197802198"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "454"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LMue1Bt7nxcIz29B7Y7IqoRhX941GpPrve9lp/AvtxM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:28:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.css",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\css\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "816"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:28:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.css.gz",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\2nfz2r92jx-tr7ou5kqyi.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "454"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LMue1Bt7nxcIz29B7Y7IqoRhX941GpPrve9lp/AvtxM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:28:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LMue1Bt7nxcIz29B7Y7IqoRhX941GpPrve9lp/AvtxM="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.tr7ou5kqyi.css",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\2nfz2r92jx-tr7ou5kqyi.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.002197802198"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "454"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LMue1Bt7nxcIz29B7Y7IqoRhX941GpPrve9lp/AvtxM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:28:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tr7ou5kqyi"
+        },
+        {
+          "Name": "label",
+          "Value": "css/app.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.tr7ou5kqyi.css",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\css\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "816"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:28:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tr7ou5kqyi"
+        },
+        {
+          "Name": "label",
+          "Value": "css/app.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.tr7ou5kqyi.css.gz",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\2nfz2r92jx-tr7ou5kqyi.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "454"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LMue1Bt7nxcIz29B7Y7IqoRhX941GpPrve9lp/AvtxM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:28:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tr7ou5kqyi"
+        },
+        {
+          "Name": "label",
+          "Value": "css/app.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LMue1Bt7nxcIz29B7Y7IqoRhX941GpPrve9lp/AvtxM="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\frzs60zzov-gm73m6d6jb.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001851851852"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "539"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iai9O9piHQRF0NoQxuAuTY0amwCP2Zos4narnLt1zqI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 15:47:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"qLhBnWYQInDj8D1oRJthnVaXWTF+xZpfvDROQIwke6w=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qLhBnWYQInDj8D1oRJthnVaXWTF+xZpfvDROQIwke6w="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1073"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qLhBnWYQInDj8D1oRJthnVaXWTF+xZpfvDROQIwke6w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 15:47:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qLhBnWYQInDj8D1oRJthnVaXWTF+xZpfvDROQIwke6w="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css.gz",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\frzs60zzov-gm73m6d6jb.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "539"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iai9O9piHQRF0NoQxuAuTY0amwCP2Zos4narnLt1zqI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 15:47:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-iai9O9piHQRF0NoQxuAuTY0amwCP2Zos4narnLt1zqI="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.gm73m6d6jb.css",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\frzs60zzov-gm73m6d6jb.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001851851852"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "539"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iai9O9piHQRF0NoQxuAuTY0amwCP2Zos4narnLt1zqI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 15:47:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"qLhBnWYQInDj8D1oRJthnVaXWTF+xZpfvDROQIwke6w=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gm73m6d6jb"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qLhBnWYQInDj8D1oRJthnVaXWTF+xZpfvDROQIwke6w="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.gm73m6d6jb.css",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1073"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qLhBnWYQInDj8D1oRJthnVaXWTF+xZpfvDROQIwke6w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 15:47:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gm73m6d6jb"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qLhBnWYQInDj8D1oRJthnVaXWTF+xZpfvDROQIwke6w="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.gm73m6d6jb.css.gz",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\frzs60zzov-gm73m6d6jb.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "539"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iai9O9piHQRF0NoQxuAuTY0amwCP2Zos4narnLt1zqI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 15:47:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gm73m6d6jb"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-iai9O9piHQRF0NoQxuAuTY0amwCP2Zos4narnLt1zqI="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.js",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\njune1dxx9-k3vhgxysg0.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.007246376812"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "137"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+5OBnxJQqVXT0DL7Ec3g1Kt8pT7NOQSdxgcSGwZuhjA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 16:04:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"UPTK5TZ0sg3pThMNUAL5XCpEf+gPL0rePgpdZkpIKEQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UPTK5TZ0sg3pThMNUAL5XCpEf+gPL0rePgpdZkpIKEQ="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.js",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\js\\site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "241"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UPTK5TZ0sg3pThMNUAL5XCpEf+gPL0rePgpdZkpIKEQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 16:04:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UPTK5TZ0sg3pThMNUAL5XCpEf+gPL0rePgpdZkpIKEQ="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.js.gz",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\njune1dxx9-k3vhgxysg0.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "137"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+5OBnxJQqVXT0DL7Ec3g1Kt8pT7NOQSdxgcSGwZuhjA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 16:04:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+5OBnxJQqVXT0DL7Ec3g1Kt8pT7NOQSdxgcSGwZuhjA="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.k3vhgxysg0.js",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\njune1dxx9-k3vhgxysg0.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.007246376812"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "137"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+5OBnxJQqVXT0DL7Ec3g1Kt8pT7NOQSdxgcSGwZuhjA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 16:04:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"UPTK5TZ0sg3pThMNUAL5XCpEf+gPL0rePgpdZkpIKEQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k3vhgxysg0"
+        },
+        {
+          "Name": "label",
+          "Value": "js/site.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UPTK5TZ0sg3pThMNUAL5XCpEf+gPL0rePgpdZkpIKEQ="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.k3vhgxysg0.js",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\js\\site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "241"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UPTK5TZ0sg3pThMNUAL5XCpEf+gPL0rePgpdZkpIKEQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 16:04:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k3vhgxysg0"
+        },
+        {
+          "Name": "label",
+          "Value": "js/site.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UPTK5TZ0sg3pThMNUAL5XCpEf+gPL0rePgpdZkpIKEQ="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.k3vhgxysg0.js.gz",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\njune1dxx9-k3vhgxysg0.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "137"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+5OBnxJQqVXT0DL7Ec3g1Kt8pT7NOQSdxgcSGwZuhjA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 16:04:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k3vhgxysg0"
+        },
+        {
+          "Name": "label",
+          "Value": "js/site.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+5OBnxJQqVXT0DL7Ec3g1Kt8pT7NOQSdxgcSGwZuhjA="
+        }
+      ]
+    }
+  ]
+}

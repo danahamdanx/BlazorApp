@@ -1,0 +1,8 @@
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net7.0\LoginTask.csproj.AssemblyReference.cache
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net7.0\LoginTask.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net7.0\LoginTask.AssemblyInfoInputs.cache
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net7.0\LoginTask.AssemblyInfo.cs
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net7.0\LoginTask.csproj.CoreCompileInputs.cache
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net7.0\LoginTask.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net7.0\LoginTask.RazorAssemblyInfo.cache
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net7.0\LoginTask.RazorAssemblyInfo.cs
