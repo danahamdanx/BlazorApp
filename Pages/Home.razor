@@ -1,0 +1,26 @@
+@page "/home"
+@inject AppState AppState
+@inject NavigationManager Nav
+
+<h2>@welcomeMessage</h2>
+
+@code {
+    private string welcomeMessage = "Loading...";
+
+    protected override void OnInitialized()
+    {
+        if (AppState.IsAuthenticated && AppState.CurrentUser != null)
+        {
+            welcomeMessage = $"Welcome, {AppState.CurrentUser.Username}!";
+        }
+        else
+        {
+            // Delay the redirect slightly to let state propagate
+            _ = Task.Run(async () =>
+            {
+                await Task.Delay(0);
+                await InvokeAsync(() => Nav.NavigateTo("/"));
+            });
+        }
+    }
+}

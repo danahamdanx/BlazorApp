@@ -1,0 +1,106 @@
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\bin\Debug\net9.0\LoginTask.staticwebassets.runtime.json
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\bin\Debug\net9.0\LoginTask.staticwebassets.endpoints.json
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\bin\Debug\net9.0\LoginTask.exe
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\bin\Debug\net9.0\LoginTask.deps.json
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\bin\Debug\net9.0\LoginTask.runtimeconfig.json
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\bin\Debug\net9.0\LoginTask.dll
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\bin\Debug\net9.0\LoginTask.pdb
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\bin\Debug\net9.0\Microsoft.AspNetCore.Components.WebAssembly.dll
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\bin\Debug\net9.0\Microsoft.JSInterop.WebAssembly.dll
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\LoginTask.csproj.AssemblyReference.cache
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\LoginTask.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\LoginTask.AssemblyInfoInputs.cache
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\LoginTask.AssemblyInfo.cs
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\LoginTask.csproj.CoreCompileInputs.cache
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\LoginTask.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\LoginTask.RazorAssemblyInfo.cache
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\LoginTask.RazorAssemblyInfo.cs
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\scopedcss\bundle\LoginTask.styles.css
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\compressed\frzs60zzov-gm73m6d6jb.gz
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\compressed\njune1dxx9-cmcr7f0huz.gz
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\staticwebassets.build.json
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\staticwebassets.development.json
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\staticwebassets\msbuild.LoginTask.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\staticwebassets\msbuild.LoginTask.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\staticwebassets\msbuild.build.LoginTask.props
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.LoginTask.props
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.LoginTask.props
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\staticwebassets.pack.json
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\LoginTask.csproj.Up2Date
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\LoginTask.dll
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\refint\LoginTask.dll
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\LoginTask.pdb
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\LoginTask.genruntimeconfig.cache
+C:\Users\Dana\Downloads\LoginTask (1)\LoginTask\obj\Debug\net9.0\ref\LoginTask.dll
+C:\Users\Dana\Desktop\LoginTask\LoginTask\bin\Debug\net9.0\LoginTask.staticwebassets.runtime.json
+C:\Users\Dana\Desktop\LoginTask\LoginTask\bin\Debug\net9.0\LoginTask.staticwebassets.endpoints.json
+C:\Users\Dana\Desktop\LoginTask\LoginTask\bin\Debug\net9.0\LoginTask.exe
+C:\Users\Dana\Desktop\LoginTask\LoginTask\bin\Debug\net9.0\LoginTask.deps.json
+C:\Users\Dana\Desktop\LoginTask\LoginTask\bin\Debug\net9.0\LoginTask.runtimeconfig.json
+C:\Users\Dana\Desktop\LoginTask\LoginTask\bin\Debug\net9.0\LoginTask.dll
+C:\Users\Dana\Desktop\LoginTask\LoginTask\bin\Debug\net9.0\LoginTask.pdb
+C:\Users\Dana\Desktop\LoginTask\LoginTask\bin\Debug\net9.0\Microsoft.AspNetCore.Components.WebAssembly.dll
+C:\Users\Dana\Desktop\LoginTask\LoginTask\bin\Debug\net9.0\Microsoft.JSInterop.WebAssembly.dll
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\LoginTask.csproj.AssemblyReference.cache
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\LoginTask.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\LoginTask.AssemblyInfoInputs.cache
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\LoginTask.AssemblyInfo.cs
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\LoginTask.csproj.CoreCompileInputs.cache
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\LoginTask.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\LoginTask.RazorAssemblyInfo.cache
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\LoginTask.RazorAssemblyInfo.cs
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\scopedcss\bundle\LoginTask.styles.css
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\compressed\frzs60zzov-gm73m6d6jb.gz
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\compressed\njune1dxx9-k3vhgxysg0.gz
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\staticwebassets.build.json
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\staticwebassets.development.json
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\staticwebassets\msbuild.LoginTask.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\staticwebassets\msbuild.LoginTask.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\staticwebassets\msbuild.build.LoginTask.props
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.LoginTask.props
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.LoginTask.props
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\staticwebassets.pack.json
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\LoginTask.csproj.Up2Date
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\LoginTask.dll
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\refint\LoginTask.dll
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\LoginTask.pdb
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\LoginTask.genruntimeconfig.cache
+C:\Users\Dana\Desktop\LoginTask\LoginTask\obj\Debug\net9.0\ref\LoginTask.dll
+C:\Users\Dana\Documents\LoginTask\bin\Debug\net9.0\LoginTask.staticwebassets.runtime.json
+C:\Users\Dana\Documents\LoginTask\bin\Debug\net9.0\LoginTask.staticwebassets.endpoints.json
+C:\Users\Dana\Documents\LoginTask\bin\Debug\net9.0\LoginTask.exe
+C:\Users\Dana\Documents\LoginTask\bin\Debug\net9.0\LoginTask.deps.json
+C:\Users\Dana\Documents\LoginTask\bin\Debug\net9.0\LoginTask.runtimeconfig.json
+C:\Users\Dana\Documents\LoginTask\bin\Debug\net9.0\LoginTask.dll
+C:\Users\Dana\Documents\LoginTask\bin\Debug\net9.0\LoginTask.pdb
+C:\Users\Dana\Documents\LoginTask\bin\Debug\net9.0\Microsoft.AspNetCore.Components.WebAssembly.dll
+C:\Users\Dana\Documents\LoginTask\bin\Debug\net9.0\Microsoft.JSInterop.WebAssembly.dll
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\LoginTask.csproj.AssemblyReference.cache
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\LoginTask.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\LoginTask.AssemblyInfoInputs.cache
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\LoginTask.AssemblyInfo.cs
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\LoginTask.csproj.CoreCompileInputs.cache
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\LoginTask.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\LoginTask.RazorAssemblyInfo.cache
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\LoginTask.RazorAssemblyInfo.cs
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\scopedcss\bundle\LoginTask.styles.css
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\compressed\2nfz2r92jx-tr7ou5kqyi.gz
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\compressed\frzs60zzov-gm73m6d6jb.gz
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\compressed\njune1dxx9-k3vhgxysg0.gz
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\staticwebassets.build.json
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\staticwebassets.development.json
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\staticwebassets\msbuild.LoginTask.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\staticwebassets\msbuild.LoginTask.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\staticwebassets\msbuild.build.LoginTask.props
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.LoginTask.props
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.LoginTask.props
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\staticwebassets.pack.json
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\LoginTask.csproj.Up2Date
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\LoginTask.dll
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\refint\LoginTask.dll
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\LoginTask.pdb
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\LoginTask.genruntimeconfig.cache
+C:\Users\Dana\Documents\LoginTask\obj\Debug\net9.0\ref\LoginTask.dll
