@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "aduwOpvTRUhrAcx3TKL0lum7ztftT0heaERDUtTZAFs=",
+  "Hash": "U9x4ujH40eRRJrJys/7MC0FoVeZNAN3gC5ZEUrK3l6g=",
   "Source": "LoginTask",
   "BasePath": "_content/LoginTask",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\2nfz2r92jx-tr7ou5kqyi.gz",
+      "Identity": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\2nfz2r92jx-uetcbie1g4.gz",
       "SourceId": "LoginTask",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/LoginTask",
-      "RelativePath": "css/app#[.{fingerprint=tr7ou5kqyi}]?.css.gz",
+      "RelativePath": "css/app#[.{fingerprint=uetcbie1g4}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -31,19 +31,19 @@
       "RelatedAsset": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\css\\app.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "c0y0b9jxwo",
-      "Integrity": "LMue1Bt7nxcIz29B7Y7IqoRhX941GpPrve9lp/AvtxM=",
+      "Fingerprint": "uaejsy4z66",
+      "Integrity": "JjOyBWocIPMbryUNBrT1x+MriLlP1F5mZCOXwRn/AO0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\css\\app.css"
     },
     {
-      "Identity": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\frzs60zzov-gm73m6d6jb.gz",
+      "Identity": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\frzs60zzov-k7xod2tey9.gz",
       "SourceId": "LoginTask",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/LoginTask",
-      "RelativePath": "css/site#[.{fingerprint=gm73m6d6jb}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=k7xod2tey9}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -52,19 +52,19 @@
       "RelatedAsset": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "tvlvklu5gz",
-      "Integrity": "iai9O9piHQRF0NoQxuAuTY0amwCP2Zos4narnLt1zqI=",
+      "Fingerprint": "7oqr7zov0d",
+      "Integrity": "OS1NkWnhMXLX9yGqPUZcjm+ZK528pjkQBOy2Rug+Yik=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\njune1dxx9-k3vhgxysg0.gz",
+      "Identity": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\njune1dxx9-zdhd8nr5uk.gz",
       "SourceId": "LoginTask",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/LoginTask",
-      "RelativePath": "js/site#[.{fingerprint=k3vhgxysg0}]?.js.gz",
+      "RelativePath": "js/site#[.{fingerprint=zdhd8nr5uk}]?.js.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -73,8 +73,8 @@
       "RelatedAsset": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\js\\site.js",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "9jdyraxyu9",
-      "Integrity": "+5OBnxJQqVXT0DL7Ec3g1Kt8pT7NOQSdxgcSGwZuhjA=",
+      "Fingerprint": "4l70vbph2j",
+      "Integrity": "mH43GaBeVFzHZ+5bsvfaK/LGZIhiArWtfNV3T+KAqrc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\js\\site.js"
@@ -94,8 +94,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "tr7ou5kqyi",
-      "Integrity": "p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw=",
+      "Fingerprint": "uetcbie1g4",
+      "Integrity": "Gk2M47d9sNL3bwN2VXf9L25kGygjb1t0G+DbPgFtXi0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\app.css"
@@ -115,8 +115,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "gm73m6d6jb",
-      "Integrity": "qLhBnWYQInDj8D1oRJthnVaXWTF+xZpfvDROQIwke6w=",
+      "Fingerprint": "k7xod2tey9",
+      "Integrity": "IIP2IDEHrSwCpr8QaGo1Htmgiv66ShsJKgcuspYSvCM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -136,8 +136,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "k3vhgxysg0",
-      "Integrity": "UPTK5TZ0sg3pThMNUAL5XCpEf+gPL0rePgpdZkpIKEQ=",
+      "Fingerprint": "zdhd8nr5uk",
+      "Integrity": "ubL4/ZSRZVSX7bpMnCT73BBJIhsDo0IoM57p/nRujYg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
@@ -146,12 +146,12 @@
   "Endpoints": [
     {
       "Route": "css/app.css",
-      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\2nfz2r92jx-tr7ou5kqyi.gz",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\2nfz2r92jx-uetcbie1g4.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.002197802198"
+          "Quality": "0.002192982456"
         }
       ],
       "ResponseHeaders": [
@@ -161,15 +161,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "454"
+          "Value": "455"
         },
         {
           "Name": "ETag",
-          "Value": "\"LMue1Bt7nxcIz29B7Y7IqoRhX941GpPrve9lp/AvtxM=\""
+          "Value": "\"JjOyBWocIPMbryUNBrT1x+MriLlP1F5mZCOXwRn/AO0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Oct 2025 16:28:28 GMT"
+          "Value": "Wed, 22 Oct 2025 20:00:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -189,13 +189,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw=\""
+          "Value": "W/\"Gk2M47d9sNL3bwN2VXf9L25kGygjb1t0G+DbPgFtXi0=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw="
+          "Value": "sha256-Gk2M47d9sNL3bwN2VXf9L25kGygjb1t0G+DbPgFtXi0="
         }
       ]
     },
@@ -210,7 +210,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "816"
+          "Value": "826"
         },
         {
           "Name": "Content-Type",
@@ -218,11 +218,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw=\""
+          "Value": "\"Gk2M47d9sNL3bwN2VXf9L25kGygjb1t0G+DbPgFtXi0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Oct 2025 16:28:28 GMT"
+          "Value": "Wed, 22 Oct 2025 20:00:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -232,13 +232,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw="
+          "Value": "sha256-Gk2M47d9sNL3bwN2VXf9L25kGygjb1t0G+DbPgFtXi0="
         }
       ]
     },
     {
       "Route": "css/app.css.gz",
-      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\2nfz2r92jx-tr7ou5kqyi.gz",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\2nfz2r92jx-uetcbie1g4.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -247,7 +247,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "454"
+          "Value": "455"
         },
         {
           "Name": "Content-Type",
@@ -255,11 +255,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"LMue1Bt7nxcIz29B7Y7IqoRhX941GpPrve9lp/AvtxM=\""
+          "Value": "\"JjOyBWocIPMbryUNBrT1x+MriLlP1F5mZCOXwRn/AO0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Oct 2025 16:28:28 GMT"
+          "Value": "Wed, 22 Oct 2025 20:00:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -277,18 +277,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-LMue1Bt7nxcIz29B7Y7IqoRhX941GpPrve9lp/AvtxM="
+          "Value": "sha256-JjOyBWocIPMbryUNBrT1x+MriLlP1F5mZCOXwRn/AO0="
         }
       ]
     },
     {
-      "Route": "css/app.tr7ou5kqyi.css",
-      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\2nfz2r92jx-tr7ou5kqyi.gz",
+      "Route": "css/app.uetcbie1g4.css",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\2nfz2r92jx-uetcbie1g4.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.002197802198"
+          "Quality": "0.002192982456"
         }
       ],
       "ResponseHeaders": [
@@ -298,15 +298,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "454"
+          "Value": "455"
         },
         {
           "Name": "ETag",
-          "Value": "\"LMue1Bt7nxcIz29B7Y7IqoRhX941GpPrve9lp/AvtxM=\""
+          "Value": "\"JjOyBWocIPMbryUNBrT1x+MriLlP1F5mZCOXwRn/AO0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Oct 2025 16:28:28 GMT"
+          "Value": "Wed, 22 Oct 2025 20:00:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -326,13 +326,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw=\""
+          "Value": "W/\"Gk2M47d9sNL3bwN2VXf9L25kGygjb1t0G+DbPgFtXi0=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "tr7ou5kqyi"
+          "Value": "uetcbie1g4"
         },
         {
           "Name": "label",
@@ -340,12 +340,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw="
+          "Value": "sha256-Gk2M47d9sNL3bwN2VXf9L25kGygjb1t0G+DbPgFtXi0="
         }
       ]
     },
     {
-      "Route": "css/app.tr7ou5kqyi.css",
+      "Route": "css/app.uetcbie1g4.css",
       "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\css\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -355,7 +355,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "816"
+          "Value": "826"
         },
         {
           "Name": "Content-Type",
@@ -363,11 +363,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw=\""
+          "Value": "\"Gk2M47d9sNL3bwN2VXf9L25kGygjb1t0G+DbPgFtXi0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Oct 2025 16:28:28 GMT"
+          "Value": "Wed, 22 Oct 2025 20:00:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -377,7 +377,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "tr7ou5kqyi"
+          "Value": "uetcbie1g4"
         },
         {
           "Name": "label",
@@ -385,13 +385,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw="
+          "Value": "sha256-Gk2M47d9sNL3bwN2VXf9L25kGygjb1t0G+DbPgFtXi0="
         }
       ]
     },
     {
-      "Route": "css/app.tr7ou5kqyi.css.gz",
-      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\2nfz2r92jx-tr7ou5kqyi.gz",
+      "Route": "css/app.uetcbie1g4.css.gz",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\2nfz2r92jx-uetcbie1g4.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -400,7 +400,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "454"
+          "Value": "455"
         },
         {
           "Name": "Content-Type",
@@ -408,11 +408,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"LMue1Bt7nxcIz29B7Y7IqoRhX941GpPrve9lp/AvtxM=\""
+          "Value": "\"JjOyBWocIPMbryUNBrT1x+MriLlP1F5mZCOXwRn/AO0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Oct 2025 16:28:28 GMT"
+          "Value": "Wed, 22 Oct 2025 20:00:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -430,7 +430,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "tr7ou5kqyi"
+          "Value": "uetcbie1g4"
         },
         {
           "Name": "label",
@@ -438,18 +438,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-LMue1Bt7nxcIz29B7Y7IqoRhX941GpPrve9lp/AvtxM="
+          "Value": "sha256-JjOyBWocIPMbryUNBrT1x+MriLlP1F5mZCOXwRn/AO0="
         }
       ]
     },
     {
       "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\frzs60zzov-gm73m6d6jb.gz",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\frzs60zzov-k7xod2tey9.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001851851852"
+          "Quality": "0.001841620626"
         }
       ],
       "ResponseHeaders": [
@@ -459,15 +459,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "539"
+          "Value": "542"
         },
         {
           "Name": "ETag",
-          "Value": "\"iai9O9piHQRF0NoQxuAuTY0amwCP2Zos4narnLt1zqI=\""
+          "Value": "\"OS1NkWnhMXLX9yGqPUZcjm+ZK528pjkQBOy2Rug+Yik=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 14 Oct 2025 15:47:55 GMT"
+          "Value": "Wed, 22 Oct 2025 20:00:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -487,13 +487,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"qLhBnWYQInDj8D1oRJthnVaXWTF+xZpfvDROQIwke6w=\""
+          "Value": "W/\"IIP2IDEHrSwCpr8QaGo1Htmgiv66ShsJKgcuspYSvCM=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-qLhBnWYQInDj8D1oRJthnVaXWTF+xZpfvDROQIwke6w="
+          "Value": "sha256-IIP2IDEHrSwCpr8QaGo1Htmgiv66ShsJKgcuspYSvCM="
         }
       ]
     },
@@ -508,7 +508,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1073"
+          "Value": "1089"
         },
         {
           "Name": "Content-Type",
@@ -516,11 +516,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"qLhBnWYQInDj8D1oRJthnVaXWTF+xZpfvDROQIwke6w=\""
+          "Value": "\"IIP2IDEHrSwCpr8QaGo1Htmgiv66ShsJKgcuspYSvCM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 14 Oct 2025 15:47:55 GMT"
+          "Value": "Wed, 22 Oct 2025 20:00:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -530,13 +530,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-qLhBnWYQInDj8D1oRJthnVaXWTF+xZpfvDROQIwke6w="
+          "Value": "sha256-IIP2IDEHrSwCpr8QaGo1Htmgiv66ShsJKgcuspYSvCM="
         }
       ]
     },
     {
       "Route": "css/site.css.gz",
-      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\frzs60zzov-gm73m6d6jb.gz",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\frzs60zzov-k7xod2tey9.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -545,7 +545,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "539"
+          "Value": "542"
         },
         {
           "Name": "Content-Type",
@@ -553,11 +553,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"iai9O9piHQRF0NoQxuAuTY0amwCP2Zos4narnLt1zqI=\""
+          "Value": "\"OS1NkWnhMXLX9yGqPUZcjm+ZK528pjkQBOy2Rug+Yik=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 14 Oct 2025 15:47:55 GMT"
+          "Value": "Wed, 22 Oct 2025 20:00:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -575,18 +575,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-iai9O9piHQRF0NoQxuAuTY0amwCP2Zos4narnLt1zqI="
+          "Value": "sha256-OS1NkWnhMXLX9yGqPUZcjm+ZK528pjkQBOy2Rug+Yik="
         }
       ]
     },
     {
-      "Route": "css/site.gm73m6d6jb.css",
-      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\frzs60zzov-gm73m6d6jb.gz",
+      "Route": "css/site.k7xod2tey9.css",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\frzs60zzov-k7xod2tey9.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001851851852"
+          "Quality": "0.001841620626"
         }
       ],
       "ResponseHeaders": [
@@ -596,15 +596,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "539"
+          "Value": "542"
         },
         {
           "Name": "ETag",
-          "Value": "\"iai9O9piHQRF0NoQxuAuTY0amwCP2Zos4narnLt1zqI=\""
+          "Value": "\"OS1NkWnhMXLX9yGqPUZcjm+ZK528pjkQBOy2Rug+Yik=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 14 Oct 2025 15:47:55 GMT"
+          "Value": "Wed, 22 Oct 2025 20:00:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -624,13 +624,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"qLhBnWYQInDj8D1oRJthnVaXWTF+xZpfvDROQIwke6w=\""
+          "Value": "W/\"IIP2IDEHrSwCpr8QaGo1Htmgiv66ShsJKgcuspYSvCM=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "gm73m6d6jb"
+          "Value": "k7xod2tey9"
         },
         {
           "Name": "label",
@@ -638,12 +638,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-qLhBnWYQInDj8D1oRJthnVaXWTF+xZpfvDROQIwke6w="
+          "Value": "sha256-IIP2IDEHrSwCpr8QaGo1Htmgiv66ShsJKgcuspYSvCM="
         }
       ]
     },
     {
-      "Route": "css/site.gm73m6d6jb.css",
+      "Route": "css/site.k7xod2tey9.css",
       "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -653,7 +653,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1073"
+          "Value": "1089"
         },
         {
           "Name": "Content-Type",
@@ -661,11 +661,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"qLhBnWYQInDj8D1oRJthnVaXWTF+xZpfvDROQIwke6w=\""
+          "Value": "\"IIP2IDEHrSwCpr8QaGo1Htmgiv66ShsJKgcuspYSvCM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 14 Oct 2025 15:47:55 GMT"
+          "Value": "Wed, 22 Oct 2025 20:00:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -675,7 +675,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "gm73m6d6jb"
+          "Value": "k7xod2tey9"
         },
         {
           "Name": "label",
@@ -683,13 +683,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-qLhBnWYQInDj8D1oRJthnVaXWTF+xZpfvDROQIwke6w="
+          "Value": "sha256-IIP2IDEHrSwCpr8QaGo1Htmgiv66ShsJKgcuspYSvCM="
         }
       ]
     },
     {
-      "Route": "css/site.gm73m6d6jb.css.gz",
-      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\frzs60zzov-gm73m6d6jb.gz",
+      "Route": "css/site.k7xod2tey9.css.gz",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\frzs60zzov-k7xod2tey9.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -698,7 +698,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "539"
+          "Value": "542"
         },
         {
           "Name": "Content-Type",
@@ -706,11 +706,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"iai9O9piHQRF0NoQxuAuTY0amwCP2Zos4narnLt1zqI=\""
+          "Value": "\"OS1NkWnhMXLX9yGqPUZcjm+ZK528pjkQBOy2Rug+Yik=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 14 Oct 2025 15:47:55 GMT"
+          "Value": "Wed, 22 Oct 2025 20:00:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -728,7 +728,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "gm73m6d6jb"
+          "Value": "k7xod2tey9"
         },
         {
           "Name": "label",
@@ -736,18 +736,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-iai9O9piHQRF0NoQxuAuTY0amwCP2Zos4narnLt1zqI="
+          "Value": "sha256-OS1NkWnhMXLX9yGqPUZcjm+ZK528pjkQBOy2Rug+Yik="
         }
       ]
     },
     {
       "Route": "js/site.js",
-      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\njune1dxx9-k3vhgxysg0.gz",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\njune1dxx9-zdhd8nr5uk.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.007246376812"
+          "Quality": "0.006944444444"
         }
       ],
       "ResponseHeaders": [
@@ -757,15 +757,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "137"
+          "Value": "143"
         },
         {
           "Name": "ETag",
-          "Value": "\"+5OBnxJQqVXT0DL7Ec3g1Kt8pT7NOQSdxgcSGwZuhjA=\""
+          "Value": "\"mH43GaBeVFzHZ+5bsvfaK/LGZIhiArWtfNV3T+KAqrc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 14 Oct 2025 16:04:38 GMT"
+          "Value": "Wed, 22 Oct 2025 20:00:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -785,13 +785,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"UPTK5TZ0sg3pThMNUAL5XCpEf+gPL0rePgpdZkpIKEQ=\""
+          "Value": "W/\"ubL4/ZSRZVSX7bpMnCT73BBJIhsDo0IoM57p/nRujYg=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-UPTK5TZ0sg3pThMNUAL5XCpEf+gPL0rePgpdZkpIKEQ="
+          "Value": "sha256-ubL4/ZSRZVSX7bpMnCT73BBJIhsDo0IoM57p/nRujYg="
         }
       ]
     },
@@ -806,7 +806,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "241"
+          "Value": "252"
         },
         {
           "Name": "Content-Type",
@@ -814,11 +814,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"UPTK5TZ0sg3pThMNUAL5XCpEf+gPL0rePgpdZkpIKEQ=\""
+          "Value": "\"ubL4/ZSRZVSX7bpMnCT73BBJIhsDo0IoM57p/nRujYg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 14 Oct 2025 16:04:38 GMT"
+          "Value": "Wed, 22 Oct 2025 20:00:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -828,13 +828,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-UPTK5TZ0sg3pThMNUAL5XCpEf+gPL0rePgpdZkpIKEQ="
+          "Value": "sha256-ubL4/ZSRZVSX7bpMnCT73BBJIhsDo0IoM57p/nRujYg="
         }
       ]
     },
     {
       "Route": "js/site.js.gz",
-      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\njune1dxx9-k3vhgxysg0.gz",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\njune1dxx9-zdhd8nr5uk.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -843,7 +843,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "137"
+          "Value": "143"
         },
         {
           "Name": "Content-Type",
@@ -851,11 +851,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+5OBnxJQqVXT0DL7Ec3g1Kt8pT7NOQSdxgcSGwZuhjA=\""
+          "Value": "\"mH43GaBeVFzHZ+5bsvfaK/LGZIhiArWtfNV3T+KAqrc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 14 Oct 2025 16:04:38 GMT"
+          "Value": "Wed, 22 Oct 2025 20:00:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -873,18 +873,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-+5OBnxJQqVXT0DL7Ec3g1Kt8pT7NOQSdxgcSGwZuhjA="
+          "Value": "sha256-mH43GaBeVFzHZ+5bsvfaK/LGZIhiArWtfNV3T+KAqrc="
         }
       ]
     },
     {
-      "Route": "js/site.k3vhgxysg0.js",
-      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\njune1dxx9-k3vhgxysg0.gz",
+      "Route": "js/site.zdhd8nr5uk.js",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\njune1dxx9-zdhd8nr5uk.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.007246376812"
+          "Quality": "0.006944444444"
         }
       ],
       "ResponseHeaders": [
@@ -894,15 +894,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "137"
+          "Value": "143"
         },
         {
           "Name": "ETag",
-          "Value": "\"+5OBnxJQqVXT0DL7Ec3g1Kt8pT7NOQSdxgcSGwZuhjA=\""
+          "Value": "\"mH43GaBeVFzHZ+5bsvfaK/LGZIhiArWtfNV3T+KAqrc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 14 Oct 2025 16:04:38 GMT"
+          "Value": "Wed, 22 Oct 2025 20:00:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -922,13 +922,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"UPTK5TZ0sg3pThMNUAL5XCpEf+gPL0rePgpdZkpIKEQ=\""
+          "Value": "W/\"ubL4/ZSRZVSX7bpMnCT73BBJIhsDo0IoM57p/nRujYg=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "k3vhgxysg0"
+          "Value": "zdhd8nr5uk"
         },
         {
           "Name": "label",
@@ -936,12 +936,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-UPTK5TZ0sg3pThMNUAL5XCpEf+gPL0rePgpdZkpIKEQ="
+          "Value": "sha256-ubL4/ZSRZVSX7bpMnCT73BBJIhsDo0IoM57p/nRujYg="
         }
       ]
     },
     {
-      "Route": "js/site.k3vhgxysg0.js",
+      "Route": "js/site.zdhd8nr5uk.js",
       "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\js\\site.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -951,7 +951,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "241"
+          "Value": "252"
         },
         {
           "Name": "Content-Type",
@@ -959,11 +959,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"UPTK5TZ0sg3pThMNUAL5XCpEf+gPL0rePgpdZkpIKEQ=\""
+          "Value": "\"ubL4/ZSRZVSX7bpMnCT73BBJIhsDo0IoM57p/nRujYg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 14 Oct 2025 16:04:38 GMT"
+          "Value": "Wed, 22 Oct 2025 20:00:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -973,7 +973,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "k3vhgxysg0"
+          "Value": "zdhd8nr5uk"
         },
         {
           "Name": "label",
@@ -981,13 +981,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-UPTK5TZ0sg3pThMNUAL5XCpEf+gPL0rePgpdZkpIKEQ="
+          "Value": "sha256-ubL4/ZSRZVSX7bpMnCT73BBJIhsDo0IoM57p/nRujYg="
         }
       ]
     },
     {
-      "Route": "js/site.k3vhgxysg0.js.gz",
-      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\njune1dxx9-k3vhgxysg0.gz",
+      "Route": "js/site.zdhd8nr5uk.js.gz",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\obj\\Debug\\net9.0\\compressed\\njune1dxx9-zdhd8nr5uk.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -996,7 +996,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "137"
+          "Value": "143"
         },
         {
           "Name": "Content-Type",
@@ -1004,11 +1004,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+5OBnxJQqVXT0DL7Ec3g1Kt8pT7NOQSdxgcSGwZuhjA=\""
+          "Value": "\"mH43GaBeVFzHZ+5bsvfaK/LGZIhiArWtfNV3T+KAqrc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 14 Oct 2025 16:04:38 GMT"
+          "Value": "Wed, 22 Oct 2025 20:00:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1026,7 +1026,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "k3vhgxysg0"
+          "Value": "zdhd8nr5uk"
         },
         {
           "Name": "label",
@@ -1034,7 +1034,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-+5OBnxJQqVXT0DL7Ec3g1Kt8pT7NOQSdxgcSGwZuhjA="
+          "Value": "sha256-mH43GaBeVFzHZ+5bsvfaK/LGZIhiArWtfNV3T+KAqrc="
         }
       ]
     }
