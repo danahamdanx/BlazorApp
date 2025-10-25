@@ -1,0 +1,94 @@
+@using LoginTask.Models
+@inject IAuthService Auth
+@inject NavigationManager Nav
+@inject AppState AppState
+@inject IJSRuntime JS
+
+<div class="form">
+    <h2>Login</h2>
+    @if (!string.IsNullOrEmpty(Message))
+    {
+        <div class="@(IsSuccess ? "success" : "error")">@Message</div>
+    }
+    <input class="input" placeholder="Username or Email" @bind="UsernameOrEmail" />
+    <input class="input" placeholder="Password" type="password" @bind="Password" />
+    <div class="flex">
+        <input id="remember" type="checkbox" @bind="RememberMe" /><label for="remember" class="small">Remember
+            me</label>
+    </div>
+    @if (ShowOtpInput)
+    {
+        <input class="input" placeholder="Enter OTP" @bind="Otp" />
+    }
+    <button class="btn" @onclick="OnLoginClicked">Login</button>
+    <!-- <div class="small">Sample users: john/123 (no OTP), jane/456 (OTP=7890), inactive/000 (inactive)</div>-->
+</div>
+
+@code {
+    private string UsernameOrEmail = string.Empty;
+    private string Password = string.Empty;
+    private string Otp = string.Empty;
+    private bool ShowOtpInput = false;
+    private string Message = string.Empty;
+    private bool IsSuccess = false;
+    private bool RememberMe = false;
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var remembered = await JS.InvokeAsync<string>("loginTask.getLocal", "rememberedUser");
+            if (!string.IsNullOrEmpty(remembered))
+            {
+                UsernameOrEmail = remembered;
+                StateHasChanged();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"RememberMe load failed: {ex.Message}");
+        }
+    }
+
+
+    private async Task OnLoginClicked()
+    {
+        Message = string.Empty;
+        IsSuccess = false;
+
+        // First call without OTP if OTP input not shown
+        var attemptOtp = ShowOtpInput ? Otp : null;
+        var result = await Auth.LoginAsync(UsernameOrEmail.Trim(), Password, attemptOtp);
+        if (!result.success && result.message == "OTP required.")
+        {
+            // Show OTP input and let user enter
+            ShowOtpInput = true;
+            Message = "OTP is required. Please enter the OTP.";
+            return;
+        }
+        if (!result.success)
+        {
+            Message = result.message;
+            return;
+        }
+
+        // success
+        IsSuccess = true;
+        Message = result.message;
+
+        // set server-side session
+        AppState.SetUser(result.user!);
+
+        // Remember me => store username in localStorage
+        if (RememberMe)
+        {
+            await JS.InvokeVoidAsync("loginTask.setLocal", "rememberedUser", UsernameOrEmail.Trim());
+        }
+        else
+        {
+            await JS.InvokeVoidAsync("loginTask.removeLocal", "rememberedUser");
+        }
+
+        // navigate to protected page
+        Nav.NavigateTo("/home");
+    }
+}

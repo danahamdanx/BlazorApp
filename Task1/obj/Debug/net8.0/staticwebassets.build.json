@@ -1,0 +1,125 @@
+{
+  "Version": 1,
+  "Hash": "CVSG48ovw/QhcSjcewQM79UWmM/DRyVt5aSryknhkrc=",
+  "Source": "LoginTask",
+  "BasePath": "_content/LoginTask",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "LoginTask\\wwwroot",
+      "Source": "LoginTask",
+      "ContentRoot": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\",
+      "BasePath": "_content/LoginTask",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\css\\app.css",
+      "SourceId": "LoginTask",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\",
+      "BasePath": "_content/LoginTask",
+      "RelativePath": "css/app#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tr7ou5kqyi",
+      "Integrity": "p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\app.css"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "css/app.css",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\css\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "816"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:28:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.tr7ou5kqyi.css",
+      "AssetFile": "C:\\Users\\Dana\\Documents\\LoginTask\\wwwroot\\css\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "816"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:28:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tr7ou5kqyi"
+        },
+        {
+          "Name": "label",
+          "Value": "css/app.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-p/B+yPVeNPLcgHJZE+w/bpcwbR7rdZNp6QIN9rE/UQw="
+        }
+      ]
+    }
+  ]
+}
