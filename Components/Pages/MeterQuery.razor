@@ -1,0 +1,592 @@
+@page "/meter-query"
+@using ElectricMeterApp.Models
+@using ElectricMeterApp.Services
+@using FluentValidation
+@inject IElectricMeterService MeterService
+@inject IValidator<MeterQueryRequest> Validator
+@inject IJSRuntime JSRuntime
+@inject ILocalStorageService LocalStorageService
+@rendermode InteractiveServer
+@implements IAsyncDisposable
+
+<PageTitle>Electric Meter Query</PageTitle>
+
+<div class="container-fluid">
+    <div class="row g-3">
+        <div class="col-12 col-lg-6">
+            <!-- Search Form Card -->
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">
+                        <i class="bi bi-search me-2"></i>Search Meter Information
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <EditForm Model="@request" OnValidSubmit="@HandleQuery">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+
+                        <div class="mb-3">
+                            <label for="meterNo" class="form-label">Meter Number *</label>
+                            <InputText @bind-Value="request.MeterNo" class="form-control" id="meterNo"
+                                placeholder="Enter 11 or 13 digit meter number" @oninput="OnMeterNumberInput" />
+                            @if (meterNoError)
+                            {
+                                <div class="invalid-feedback d-block">@meterNoErrorMessage</div>
+                            }
+                            else
+                            {
+                                <div class="form-text">Must be exactly 11 or 13 digits (numbers only)</div>
+                            }
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="amount" class="form-label">Amount *</label>
+                            <InputNumber @bind-Value="request.Amount" class="form-control" id="amount"
+                                placeholder="Enter amount between 20-500" />
+                            @if (amountError)
+                            {
+                                <div class="invalid-feedback d-block">@amountErrorMessage</div>
+                            }
+                            else
+                            {
+                                <div class="form-text">Must be between 20 and 500</div>
+                            }
+                        </div>
+
+                        <div class="d-flex gap-2 flex-wrap">
+                            <button type="submit" class="btn btn-primary" disabled="@isLoading">
+                                @if (isLoading)
+                                {
+                                    <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                                }
+                                else
+                                {
+                                    <i class="bi bi-search me-2"></i>
+                                }
+                                Query Meter
+                            </button>
+
+                            <button type="button" class="btn btn-outline-secondary" @onclick="ClearForm">
+                                <i class="bi bi-arrow-clockwise me-2"></i>Clear
+                            </button>
+                        </div>
+                    </EditForm>
+                </div>
+            </div>
+
+            <!-- Recent Queries Card (Bonus Feature) -->
+            @if (recentQueries?.Any() == true)
+            {
+                <div class="card shadow-sm mt-3">
+                    <div class="card-header bg-info text-white">
+                        <h6 class="mb-0">
+                            <i class="bi bi-clock-history me-2"></i>Recent Queries
+                        </h6>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="list-group list-group-flush">
+                            @foreach (var query in recentQueries.Take(5))
+                            {
+                                <div class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <small class="text-muted d-block">Meter: @query.MeterNo</small>
+                                        <span class="fw-bold text-success">@query.Amount.ToString("C")</span>
+                                    </div>
+                                    <small class="text-muted">@query.Timestamp?.ToString("MM/dd HH:mm")</small>
+                                </div>
+                            }
+                        </div>
+                        @if (recentQueries.Count > 5)
+                        {
+                            <div class="card-footer text-center">
+                                <small class="text-muted">Showing latest 5 of @recentQueries.Count queries</small>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="col-12 col-lg-6">
+            <!-- Query Results -->
+            @if (queryResponse != null)
+            {
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">
+                            <i class="bi bi-info-circle me-2"></i>Meter Information
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        @if (queryResponse.Success)
+                        {
+                            <div class="alert alert-success">
+                                <h6 class="alert-heading">
+                                    <i class="bi bi-check-circle me-2"></i>Query Successful
+                                </h6>
+                                <p class="mb-0">Meter information retrieved successfully.</p>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <th class="w-25">Account Number</th>
+                                            <td>@queryResponse.AccountNumber</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Account Used</th>
+                                            <td>@queryResponse.AccountUsed</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Customer Name</th>
+                                            <td>@queryResponse.CustomerName</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Meter Number</th>
+                                            <td>@queryResponse.MeterNumber</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Query Reference</th>
+                                            <td>@queryResponse.QueryRef</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Recharge Amount</th>
+                                            <td class="fw-bold text-success">@queryResponse.RechargeAmount.ToString("C")</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Adjustments</th>
+                                            <td class="fw-bold text-danger">@queryResponse.Adjustments.ToString("C")</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Total Amount</th>
+                                            <td class="fw-bold">@((queryResponse.RechargeAmount +
+                                                                                        queryResponse.Adjustments).ToString("C"))</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <td>@queryResponse.Timestamp.ToString("f")</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            @if (queryResponse.AdjustmentsDetails?.Any() == true)
+                            {
+                                <div class="mt-4">
+                                    <h6 class="border-bottom pb-2">
+                                        <i class="bi bi-list-check me-2"></i>Adjustment Details
+                                    </h6>
+                                    <div class="table-responsive">
+                                        <table class="table table-sm table-hover">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Adjustment Name</th>
+                                                    <th>Value</th>
+                                                    <th>Remains</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var adjustment in queryResponse.AdjustmentsDetails)
+                                                {
+                                                    <tr>
+                                                        <td>@adjustment.AdjustmentName</td>
+                                                        <td class="text-danger fw-bold">@adjustment.AdjustmentValue</td>
+                                                        <td>@adjustment.AdjustmentRemains</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            }
+
+                            <div class="mt-3 p-3 bg-light rounded">
+                                <h6>
+                                    <i class="bi bi-calculator me-2"></i>Payment Summary
+                                </h6>
+                                <p class="mb-1">Amount Entered: <strong>@request.Amount.ToString("C")</strong></p>
+                                <p class="mb-1">Adjustments: <strong
+                                        class="text-danger">-@queryResponse.Adjustments.ToString("C")</strong></p>
+                                <p class="mb-0">Recharge Amount: <strong
+                                        class="text-success">@queryResponse.RechargeAmount.ToString("C")</strong></p>
+                            </div>
+
+                            <button class="btn btn-success mt-3 w-100" @onclick="ShowPaymentConfirmation">
+                                <i class="bi bi-credit-card me-2"></i>Process Payment
+                            </button>
+                        }
+                        else
+                        {
+                            <div class="alert alert-danger">
+                                <h6 class="alert-heading">
+                                    <i class="bi bi-exclamation-triangle me-2"></i>Query Failed
+                                </h6>
+                                <p class="mb-0">Failed to query meter information. Please try again.</p>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+
+            <!-- Payment Results -->
+            @if (paymentResponse != null)
+            {
+                <div class="card shadow-sm mt-3">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">
+                            <i class="bi bi-receipt me-2"></i>Payment Result
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        @if (paymentResponse.Success)
+                        {
+                            <div class="alert alert-success">
+                                <h6 class="alert-heading">
+                                    <i class="bi bi-check-circle me-2"></i>Payment Successful!
+                                </h6>
+                                <p class="mb-0">Your payment has been processed successfully.</p>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <th class="w-25">Success</th>
+                                            <td><span class="badge bg-success">True</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Meter Number</th>
+                                            <td>@paymentResponse.MeterNumber</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Customer Name</th>
+                                            <td>@paymentResponse.CustomerName</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Account Number</th>
+                                            <td>@paymentResponse.AccountNumber</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Amount Paid</th>
+                                            <td class="fw-bold text-success">@paymentResponse.AmountPaid.ToString("C")</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Units Added</th>
+                                            <td class="fw-bold">@paymentResponse.UnitsAdded.ToString("F1") units</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Token</th>
+                                            <td class="font-monospace text-primary fw-bold">@paymentResponse.Token</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Reference Number</th>
+                                            <td class="font-monospace">@paymentResponse.ReferenceNumber</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Account Used</th>
+                                            <td>@paymentResponse.AccountUsed</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <td class="font-monospace">
+                                                @paymentResponse.Timestamp.ToString("yyyy-MM-ddTHH:mm:ss.ffffff")</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="alert alert-info mt-3">
+                                <h6 class="alert-heading">
+                                    <i class="bi bi-info-circle me-2"></i>Important Information
+                                </h6>
+                                <ul class="mb-0">
+                                    <li>Please save your token for future reference: <strong
+                                            class="font-monospace">@paymentResponse.Token</strong></li>
+                                    <li>Reference number: <strong
+                                            class="font-monospace">@paymentResponse.ReferenceNumber</strong></li>
+                                    <li>Account used for payment: <strong>@paymentResponse.AccountUsed</strong></li>
+                                    <li><strong>@paymentResponse.UnitsAdded.ToString("F1") units</strong> have been added to
+                                        your meter</li>
+                                </ul>
+                            </div>
+
+                            <button class="btn btn-outline-primary w-100 mt-2" @onclick="PrintReceipt">
+                                <i class="bi bi-printer me-2"></i>Print Receipt
+                            </button>
+                        }
+                        else
+                        {
+                            <div class="alert alert-danger">
+                                <h6 class="alert-heading">
+                                    <i class="bi bi-exclamation-triangle me-2"></i>Payment Failed
+                                </h6>
+                                <p class="mb-0">Unable to process payment. Please try again or contact support.</p>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Confirmation Modal -->
+@if (showConfirmation)
+{
+    <div class="modal show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5)">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-warning">
+                    <h5 class="modal-title">
+                        <i class="bi bi-exclamation-triangle me-2"></i>Confirm Payment
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to process payment of <strong
+                            class="text-success">@request.Amount.ToString("C")</strong> for meter
+                        <strong>@request.MeterNo</strong>?
+                    </p>
+                    <div class="alert alert-warning">
+                        <small>
+                            <i class="bi bi-info-circle me-1"></i>
+                            This action cannot be undone. Please verify the details before proceeding.
+                        </small>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" @onclick="CancelPayment">
+                        <i class="bi bi-x-circle me-2"></i>Cancel
+                    </button>
+                    <button type="button" class="btn btn-primary" @onclick="ProcessPayment">
+                        <i class="bi bi-check-circle me-2"></i>Confirm Payment
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private MeterQueryRequest request = new();
+    private MeterQueryResponse? queryResponse;
+    private PaymentResponse? paymentResponse;
+    private bool isLoading = false;
+    private bool showConfirmation = false;
+
+    // Validation state
+    private bool meterNoError = false;
+    private bool amountError = false;
+    private string meterNoErrorMessage = "";
+    private string amountErrorMessage = "";
+
+    // Bonus features
+    private List<MeterQueryRequest> recentQueries = new();
+    private IJSObjectReference? jsModule;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            try
+            {
+                jsModule = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./js/meterQuery.js");
+                await LoadRecentQueries();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error loading JS module: {ex.Message}");
+            }
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        // Initialize validation state
+        meterNoError = false;
+        amountError = false;
+    }
+
+    private async Task HandleQuery()
+    {
+        // Manual validation
+        if (!await ValidateForm())
+        {
+            return;
+        }
+
+        isLoading = true;
+        try
+        {
+            queryResponse = await MeterService.QueryMeterAsync(request);
+            paymentResponse = null; // Clear previous payment result
+
+            // Save to recent queries (bonus feature)
+            if (queryResponse.Success)
+            {
+                await LocalStorageService.SaveRecentQueryAsync(request, queryResponse);
+                await LoadRecentQueries();
+            }
+        }
+        catch (Exception ex)
+        {
+            // Handle error
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+        finally
+        {
+            isLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    private async Task<bool> ValidateForm()
+    {
+        // Reset validation state
+        meterNoError = false;
+        amountError = false;
+        meterNoErrorMessage = "";
+        amountErrorMessage = "";
+
+        var validationResult = await Validator.ValidateAsync(request);
+
+        if (!validationResult.IsValid)
+        {
+            foreach (var error in validationResult.Errors)
+            {
+                if (error.PropertyName == nameof(MeterQueryRequest.MeterNo))
+                {
+                    meterNoError = true;
+                    meterNoErrorMessage = error.ErrorMessage;
+                }
+                else if (error.PropertyName == nameof(MeterQueryRequest.Amount))
+                {
+                    amountError = true;
+                    amountErrorMessage = error.ErrorMessage;
+                }
+            }
+            StateHasChanged();
+            return false;
+        }
+
+        return true;
+    }
+    private async void OnMeterNumberInput(ChangeEventArgs e)
+    {
+        if (jsModule != null)
+        {
+            try
+            {
+                // Pass the actual input element instead of just the value
+                await jsModule.InvokeVoidAsync("autoFormatMeterNumber", e.Value?.ToString());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in auto-format: {ex.Message}");
+            }
+        }
+    }
+
+
+
+    private void ShowPaymentConfirmation()
+    {
+        if (queryResponse?.Success == true)
+        {
+            showConfirmation = true;
+            StateHasChanged();
+        }
+    }
+
+    private void CancelPayment()
+    {
+        showConfirmation = false;
+        StateHasChanged();
+    }
+
+    private async Task ProcessPayment()
+    {
+        showConfirmation = false;
+        isLoading = true;
+        StateHasChanged();
+
+        try
+        {
+            paymentResponse = await MeterService.ProcessPaymentAsync(request);
+
+            // Reset form after successful payment
+            if (paymentResponse.Success)
+            {
+                request = new MeterQueryRequest();
+                queryResponse = null;
+
+                // Reload recent queries to include this transaction
+                await LoadRecentQueries();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Payment error: {ex.Message}");
+        }
+        finally
+        {
+            isLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    private async Task LoadRecentQueries()
+    {
+        try
+        {
+            recentQueries = await LocalStorageService.GetRecentQueriesAsync();
+            StateHasChanged();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading recent queries: {ex.Message}");
+        }
+    }
+
+    private void ClearForm()
+    {
+        request = new MeterQueryRequest();
+        queryResponse = null;
+        paymentResponse = null;
+        meterNoError = false;
+        amountError = false;
+        meterNoErrorMessage = "";
+        amountErrorMessage = "";
+        StateHasChanged();
+    }
+
+    private async Task PrintReceipt()
+    {
+        if (jsModule != null && paymentResponse != null)
+        {
+            try
+            {
+                await jsModule.InvokeVoidAsync("printReceipt");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error printing: {ex.Message}");
+            }
+        }
+    }
+
+    // Dispose the JS module
+    public async ValueTask DisposeAsync()
+    {
+        if (jsModule != null)
+        {
+            try
+            {
+                await jsModule.DisposeAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error disposing JS module: {ex.Message}");
+            }
+        }
+    }
+}
