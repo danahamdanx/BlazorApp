@@ -1,0 +1,252 @@
+@page "/settings"
+@using Client.Models
+@using Radzen
+@using Microsoft.AspNetCore.Components.Web
+
+<div class="settings-container">
+    <RadzenCard Class="settings-card shadow-lg rounded-4 border-0">
+        <RadzenCardHeader Class="settings-header">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="header-icon-wrapper">
+                        <RadzenIcon Icon="settings" Class="header-icon" />
+                    </div>
+                    <div>
+                        <h3 class="mb-0 fw-bold">Application Settings</h3>
+                        <p class="text-muted mb-0 small">Manage your configuration values</p>
+                    </div>
+                </div>
+            </div>
+        </RadzenCardHeader>
+        
+        <RadzenCardContent Class="p-4">
+
+            <!-- Enhanced Info Alert -->
+            <div class="info-banner mb-4">
+                <div class="info-banner-icon">
+                    <RadzenIcon Icon="lightbulb" />
+                </div>
+                <div class="info-banner-content">
+                    <strong>Quick Tip:</strong> Click <span class="badge bg-primary text-white mx-1 px-2 py-1">Edit</span> to modify settings, then <span class="badge bg-success text-white mx-1 px-2 py-1">Save</span> to apply changes.
+                </div>
+            </div>
+
+            <!-- Enhanced DataGrid -->
+            <div class="data-grid-wrapper">
+                <RadzenDataGrid @ref="grid"
+                                Data="@settings"
+                                TItem="Setting"
+                                EditMode="DataGridEditMode.Single"
+                                RowUpdate="@OnRowUpdate"
+                                Class="enhanced-grid"
+                                AllowSorting="true"
+                                AllowFiltering="true"
+                                AllowColumnResize="true"
+                                FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                                ShowPaging="true"
+                                PageSize="10">
+
+                    <Columns>
+
+                        <RadzenDataGridColumn TItem="Setting" Property="Id" Title="ID" Width="80px" TextAlign="TextAlign.Center">
+                            <Template Context="item">
+                                <span class="id-badge">@item.Id</span>
+                            </Template>
+                        </RadzenDataGridColumn>
+
+                        <RadzenDataGridColumn TItem="Setting" Property="SettingKey" Title="Key" Width="240px">
+                            <Template Context="item">
+                                <div class="key-cell">
+                                    <div class="key-icon">
+                                        <RadzenIcon Icon="vpn_key" />
+                                    </div>
+                                    <span class="key-text">@item.SettingKey</span>
+                                </div>
+                            </Template>
+                        </RadzenDataGridColumn>
+
+                        <RadzenDataGridColumn TItem="Setting" Property="SettingValue" Title="Value" Width="280px">
+                            <Template Context="item">
+                                @if (!string.IsNullOrEmpty(item.SettingValue))
+                                {
+                                    <div class="value-cell">
+                                        <span class="value-badge @(HasPendingChanges(item) ? "modified" : "")">
+                                            @item.SettingValue
+                                        </span>
+                                        @if (HasPendingChanges(item))
+                                        {
+                                            <span class="modified-indicator" title="Modified">
+                                                <RadzenIcon Icon="edit" Style="font-size: 14px;" />
+                                            </span>
+                                        }
+                                    </div>
+                                }
+                                else
+                                {
+                                    <span class="empty-value">
+                                        <RadzenIcon Icon="remove" Class="me-1" Style="font-size: 14px;" />
+                                        Not set
+                                    </span>
+                                }
+                            </Template>
+                            <EditTemplate Context="item">
+                                <RadzenTextBox @bind-Value="item.SettingValue"
+                                               Style="width:100%; padding:0.5rem 0.75rem; font-family: 'Courier New', monospace; border-radius: 6px; border: 2px solid #0d6efd;"
+                                               Placeholder="Enter value..." />
+                            </EditTemplate>
+                        </RadzenDataGridColumn>
+
+                        <RadzenDataGridColumn TItem="Setting" Property="Description" Title="Description">
+                            <Template Context="item">
+                                @if (!string.IsNullOrEmpty(item.Description))
+                                {
+                                    <div class="description-cell" title="@item.Description">
+                                        <RadzenIcon Icon="description" Class="me-2 text-muted" Style="font-size: 16px;" />
+                                        <span>@item.Description</span>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <span class="empty-description">
+                                        <RadzenIcon Icon="notes" Class="me-1" Style="font-size: 14px;" />
+                                        No description
+                                    </span>
+                                }
+                            </Template>
+                        </RadzenDataGridColumn>
+
+                        <RadzenDataGridColumn TItem="Setting" Title="Actions" Width="200px" Frozen="true" TextAlign="TextAlign.Center">
+                            <Template Context="item">
+                                <div class="action-buttons">
+                                    <RadzenButton Text="Edit"
+                                                  Icon="edit"
+                                                  Size="ButtonSize.Small"
+                                                  ButtonStyle="ButtonStyle.Primary"
+                                                  Click="@(args => { editingItem = item; grid.EditRow(item); })"
+                                                  Disabled="@(editingItem != null && editingItem != item)" 
+                                                  Class="action-btn" />
+                                    @if (HasPendingChanges(item))
+                                    {
+                                        <RadzenButton Text="Reset"
+                                                      Icon="replay"
+                                                      Size="ButtonSize.Small"
+                                                      ButtonStyle="ButtonStyle.Light"
+                                                      Click="@(args => ResetSetting(item))" 
+                                                      Class="action-btn" />
+                                    }
+                                </div>
+                            </Template>
+                            <EditTemplate Context="item">
+                                <div class="action-buttons">
+                                    <RadzenButton Text="Save"
+                                                  Icon="save"
+                                                  Size="ButtonSize.Small"
+                                                  ButtonStyle="ButtonStyle.Success"
+                                                  Click="@(args => SaveRow(item))" 
+                                                  Class="action-btn" />
+                                    <RadzenButton Text="Cancel"
+                                                  Icon="close"
+                                                  Size="ButtonSize.Small"
+                                                  ButtonStyle="ButtonStyle.Light"
+                                                  Click="@(args => CancelEdit(item))" 
+                                                  Class="action-btn" />
+                                </div>
+                            </EditTemplate>
+                        </RadzenDataGridColumn>
+
+                    </Columns>
+
+                    <EmptyTemplate>
+                        <div class="empty-state">
+                            <div class="empty-icon">
+                                <RadzenIcon Icon="folder_open" />
+                            </div>
+                            <h5 class="empty-title">No Settings Found</h5>
+                            <p class="empty-description">Create your first setting to get started</p>
+                            <RadzenButton Text="Add Setting" 
+                                          Icon="add" 
+                                          ButtonStyle="ButtonStyle.Primary" 
+                                          Class="mt-3" />
+                        </div>
+                    </EmptyTemplate>
+
+                </RadzenDataGrid>
+            </div>
+
+        </RadzenCardContent>
+    </RadzenCard>
+</div>
+
+
+@code {
+    RadzenDataGrid<Setting> grid;
+    private Dictionary<int, string> originalValues = new();
+    Setting editingItem;
+
+    List<Setting> settings = new()
+    {
+        new() { Id = 1, SettingKey = "Setting1", SettingValue = "Value1", Description = "This is the first setting with a longer description for testing purposes" },
+        new() { Id = 12, SettingKey = "Setting2", SettingValue = "2", Description = "Numeric setting for testing" },
+        new() { Id = 34, SettingKey = "Setting3", SettingValue = "4", Description = "" },
+        new() { Id = 788, SettingKey = "Setting5", SettingValue = "Value 11", Description = "Complex setting value example" }
+    };
+
+    protected override void OnInitialized()
+    {
+        foreach (var setting in settings)
+        {
+            originalValues[setting.Id] = setting.SettingValue;
+        }
+    }
+
+    void SaveRow(Setting item)
+    {
+        grid.UpdateRow(item);
+        editingItem = null;
+    }
+
+    void OnRowUpdate(Setting item)
+    {
+        if (string.IsNullOrWhiteSpace(item.SettingValue))
+        {
+            item.SettingValue = originalValues[item.Id];
+        }
+    }
+
+    void CancelEdit(Setting item)
+    {
+        editingItem = null;
+        grid.CancelEditRow(item);
+    }
+
+    void ResetSetting(Setting item)
+    {
+        if (originalValues.ContainsKey(item.Id))
+        {
+            item.SettingValue = originalValues[item.Id];
+            StateHasChanged();
+        }
+    }
+
+    void ResetAllSettings()
+    {
+        foreach (var setting in settings)
+        {
+            if (originalValues.ContainsKey(setting.Id))
+            {
+                setting.SettingValue = originalValues[setting.Id];
+            }
+        }
+        StateHasChanged();
+    }
+
+    bool HasPendingChanges(Setting item)
+    {
+        return originalValues.ContainsKey(item.Id) && originalValues[item.Id] != item.SettingValue;
+    }
+
+    IEnumerable<Setting> GetModifiedSettings()
+    {
+        return settings.Where(s => HasPendingChanges(s));
+    }
+}
