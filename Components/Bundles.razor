@@ -1,0 +1,124 @@
+@using Radzen.Blazor
+
+<div class="packages-container" style="padding: 1.5rem; max-width: 1200px; margin: 0 auto;">
+    <!-- Header Section -->
+    <div class="header-section text-center mb-4">
+        <h1 style="color: #2D3748; font-weight: 600; margin-bottom: 0.5rem;">الحزم والعروض</h1>
+        <p style="color: #718096; font-size: 1.1rem;">اختر الباقة التي تناسب احتياجاتك</p>
+    </div>
+
+    <!-- Packages Grid -->
+    <RadzenRow Gap="1.5rem">
+        @foreach (var package in packages)
+        {
+            <RadzenColumn Size="12" SizeMD="6" SizeLG="4">
+                <div class="package-card" style="background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); padding: 1.5rem; height: 100%; display: flex; flex-direction: column; transition: all 0.3s;">
+                    <!-- Package Header -->
+                    <div class="text-center mb-3">
+                        <RadzenBadge Text="@package.Name" 
+                                    BadgeStyle="@GetBadgeStyle(package.Name)" 
+                                    Style="font-size: 1.1rem; padding: 0.5rem 1rem;" />
+                    </div>
+
+                    <!-- Package Price -->
+                    <div class="text-center mb-3">
+                        <div style="font-size: 2rem; font-weight: 700; color: #2D3748; margin-bottom: 0.25rem;">
+                            @package.Price.Split('/')[0]
+                        </div>
+                        <div style="color: #718096; font-size: 0.9rem;">
+                            @package.Price.Split('/')[1]
+                        </div>
+                    </div>
+
+                    <!-- Package Description -->
+                    <div class="text-center mb-3">
+                        <RadzenText Style="color: #718096; font-size: 0.95rem;">@package.Description</RadzenText>
+                    </div>
+
+                    <!-- Package Features -->
+                    <div class="mb-4" style="flex: 1;">
+                        <RadzenStack Gap="0.5rem">
+                            @foreach (var feature in package.Features)
+                            {
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <RadzenIcon Icon="check_circle" Style="color: #48BB78; font-size: 1rem;" />
+                                    <RadzenText Style="color: #4A5568; font-size: 0.9rem;">@feature</RadzenText>
+                                </div>
+                            }
+                        </RadzenStack>
+                    </div>
+
+                    <!-- Subscribe Button -->
+                    <RadzenButton 
+                        Text="اشتراك" 
+                        ButtonStyle="ButtonStyle.Primary" 
+                        Click="@(() => SubscribeToPackage(package))"
+                        Style="width: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 8px; padding: 0.75rem; font-weight: 600;" />
+                </div>
+            </RadzenColumn>
+        }
+    </RadzenRow>
+</div>
+
+@code {
+    private List<Package> packages = new()
+    {
+        new Package 
+        { 
+            Name = "الأساسية", 
+            Price = "$9.99/شهر", 
+            Description = "للاستخدام الشخصي",
+            Features = new List<string> { "10 GB تخزين", "دعم أساسي", "تطبيق واحد", "نسخ احتياطي" }
+        },
+        new Package 
+        { 
+            Name = "المتقدمة", 
+            Price = "$19.99/شهر", 
+            Description = "للشركات الصغيرة",
+            Features = new List<string> { "50 GB تخزين", "دعم متقدم", "5 تطبيقات", "نسخ احتياطي" }
+        },
+        new Package 
+        { 
+            Name = "الاحترافية", 
+            Price = "$49.99/شهر", 
+            Description = "للمؤسسات",
+            Features = new List<string> { "تخزين غير محدود", "دعم 24/7", "تطبيقات غير محدودة", "أمان متقدم" }
+        }
+    };
+
+    private BadgeStyle GetBadgeStyle(string packageName)
+    {
+        return packageName switch
+        {
+            "الأساسية" => BadgeStyle.Info,
+            "المتقدمة" => BadgeStyle.Success,
+            "الاحترافية" => BadgeStyle.Warning,
+            _ => BadgeStyle.Primary
+        };
+    }
+
+    private void SubscribeToPackage(Package package)
+    {
+        // Implement subscription logic
+        Console.WriteLine($"تم الاشتراك في باقة {package.Name}");
+    }
+
+    public class Package
+    {
+        public string Name { get; set; } = "";
+        public string Price { get; set; } = "";
+        public string Description { get; set; } = "";
+        public List<string> Features { get; set; } = new();
+    }
+}
+
+<style>
+    .package-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12) !important;
+    }
+
+    .packages-container {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+</style>

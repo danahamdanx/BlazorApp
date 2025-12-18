@@ -1,0 +1,252 @@
+@using Radzen.Blazor
+
+<div class="balance-recharge-container" style="padding: 1.5rem; max-width: 1200px; margin: 0 auto;">
+    <!-- Header -->
+    <div class="header-section text-center mb-5">
+        <h1 style="color: #2D3748; font-weight: 600; margin-bottom: 0.5rem;">شحن الرصيد</h1>
+        <p style="color: #718096; font-size: 1.1rem;">أضف رصيد إلى حسابك بسهولة وأمان</p>
+    </div>
+
+    <RadzenRow Gap="2rem">
+        <!-- Left Column - Balance and Quick Actions -->
+        <RadzenColumn Size="12" SizeMD="5">
+            <!-- Current Balance Card -->
+            <RadzenCard Style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 16px; box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);">
+                <div class="balance-content text-center" style="padding: 2rem 1rem;">
+                    <RadzenIcon Icon="account_balance_wallet" Style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.9;" />
+                    <h4 style="margin-bottom: 0.5rem; font-weight: 400;">الرصيد الحالي</h4>
+                    <div style="font-size: 3rem; font-weight: 700; margin: 1rem 0;">$250.00</div>
+                    <p style="opacity: 0.9; margin: 0;">رصيد متاح للاستخدام الفوري</p>
+                </div>
+            </RadzenCard>
+
+            <!-- Quick Recharge Section -->
+            <RadzenCard class="mt-4" Style="border: none; border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+                <div style="padding: 1.5rem;">
+                    <h4 style="color: #2D3748; margin-bottom: 1.5rem; font-weight: 600;">
+                        <RadzenIcon Icon="flash_on" Style="margin-left: 0.5rem;" />
+                        شحن سريع
+                    </h4>
+                    
+                    <RadzenRow Gap="0.5rem">
+                        @foreach (var amount in quickAmounts)
+                        {
+                            <RadzenColumn Size="6">
+                                <RadzenButton 
+                                    Text="@($"${amount}")" 
+                                    ButtonStyle="ButtonStyle.Light" 
+                                    Size="ButtonSize.Large"
+                                    Click="@(() => SelectAmount(amount))"
+                                    Style="@GetButtonStyle(amount)"
+                                    class="amount-btn" />
+                            </RadzenColumn>
+                        }
+                    </RadzenRow>
+
+                    <!-- Custom Amount -->
+                    <div class="custom-amount-section mt-4">
+                        <label style="display: block; color: #4A5568; margin-bottom: 0.5rem; font-weight: 500;">
+                            <RadzenIcon Icon="edit" Style="margin-left: 0.5rem;" />
+                            مبلغ مخصص
+                        </label>
+                        <RadzenTextBox 
+                            @bind-Value="@customAmount" 
+                            Placeholder="أدخل المبلغ المطلوب..." 
+                            Style="width: 100%; height: 50px; font-size: 1.1rem; text-align: center; border-radius: 12px; border: 2px solid #E2E8F0;"
+                            Change="@OnCustomAmountChange" />
+                    </div>
+
+                    <!-- Confirm Button -->
+                    <RadzenButton 
+                        Text="شحن الرصيد الآن" 
+                        ButtonStyle="ButtonStyle.Primary" 
+                        Size="ButtonSize.Large"
+                        Disabled="@(!IsValidAmount)"
+                        Click="@ConfirmRecharge"
+                        Icon="add"
+                        class="mt-4"
+                        Style="width: 100%; height: 55px; font-size: 1.2rem; font-weight: 600; border-radius: 12px; background: linear-gradient(135deg, #48BB78 0%, #38A169 100%); border: none; box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);" />
+                </div>
+            </RadzenCard>
+        </RadzenColumn>
+
+        <!-- Right Column - Recent Transactions -->
+        <RadzenColumn Size="12" SizeMD="7">
+            <RadzenCard Style="border: none; border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); height: 100%;">
+                <div style="padding: 1.5rem;">
+                    <h4 style="color: #2D3748; margin-bottom: 1.5rem; font-weight: 600;">
+                        <RadzenIcon Icon="history" Style="margin-left: 0.5rem;" />
+                        عمليات الشحن الأخيرة
+                    </h4>
+                    
+                    @if (rechargeHistory.Any())
+                    {
+                        <div class="transactions-list">
+                            @foreach (var record in rechargeHistory.OrderByDescending(r => r.Date))
+                            {
+                                <div class="transaction-item" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; border-bottom: 1px solid #F7FAFC; transition: background-color 0.2s;">
+                                    <div class="transaction-info" style="display: flex; align-items: center;">
+                                        <RadzenIcon 
+                                            Icon="check_circle" 
+                                            Style="color: #48BB78; font-size: 1.5rem; margin-left: 1rem;" />
+                                        <div>
+                                            <div style="font-weight: 600; color: #2D3748;">شحن ناجح</div>
+                                            <div style="color: #718096; font-size: 0.9rem;">
+                                                @record.Date.ToString("dd MMM yyyy - hh:mm tt")
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <RadzenBadge 
+                                        Text="@($"${record.Amount}")" 
+                                        BadgeStyle="BadgeStyle.Success"
+                                        Style="font-size: 1.1rem; font-weight: 600; padding: 0.5rem 1rem; border-radius: 20px;" />
+                                </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="text-center" style="padding: 3rem 1rem; color: #718096;">
+                            <RadzenIcon Icon="receipt" Style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;" />
+                            <p>لا توجد عمليات شحن سابقة</p>
+                        </div>
+                    }
+
+                    <!-- Statistics Summary -->
+                    <div class="stats-summary mt-4" style="background: #F7FAFC; border-radius: 12px; padding: 1rem;">
+                        <RadzenRow>
+                            <RadzenColumn Size="6">
+                                <div class="text-center">
+                                    <div style="font-size: 0.9rem; color: #718096;">إجمالي الشحن</div>
+                                    <div style="font-size: 1.5rem; font-weight: 700; color: #2D3748;">
+                                        $@rechargeHistory.Sum(r => r.Amount)
+                                    </div>
+                                </div>
+                            </RadzenColumn>
+                            <RadzenColumn Size="6">
+                                <div class="text-center">
+                                    <div style="font-size: 0.9rem; color: #718096;">عدد العمليات</div>
+                                    <div style="font-size: 1.5rem; font-weight: 700; color: #2D3748;">
+                                        @rechargeHistory.Count
+                                    </div>
+                                </div>
+                            </RadzenColumn>
+                        </RadzenRow>
+                    </div>
+                </div>
+            </RadzenCard>
+        </RadzenColumn>
+    </RadzenRow>
+</div>
+
+@code {
+    private List<RechargeRecord> rechargeHistory = new()
+    {
+        new RechargeRecord { Date = DateTime.Now.AddDays(-2), Amount = 50 },
+        new RechargeRecord { Date = DateTime.Now.AddDays(-7), Amount = 100 },
+        new RechargeRecord { Date = DateTime.Now.AddDays(-15), Amount = 25 },
+        new RechargeRecord { Date = DateTime.Now.AddDays(-30), Amount = 75 },
+        new RechargeRecord { Date = DateTime.Now.AddDays(-45), Amount = 150 }
+    };
+
+    private decimal[] quickAmounts = new[] { 10m, 25m, 50m, 100m };
+    private string customAmount = "";
+    private decimal selectedAmount = 0;
+
+    private bool IsValidAmount => selectedAmount > 0 || (!string.IsNullOrEmpty(customAmount) && decimal.TryParse(customAmount, out decimal amount) && amount > 0);
+
+    private string GetButtonStyle(decimal amount)
+    {
+        var baseStyle = "width: 100%; height: 70px; font-size: 1.4rem; font-weight: 700; border-radius: 12px; transition: all 0.3s; margin-bottom: 0.5rem;";
+        var isSelected = selectedAmount == amount;
+        
+        if (isSelected)
+        {
+            return baseStyle + "background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4); transform: translateY(-2px);";
+        }
+        
+        return baseStyle + "background: white; color: #667eea; border: 2px solid #667eea;";
+    }
+
+    private void SelectAmount(decimal amount)
+    {
+        selectedAmount = amount;
+        customAmount = "";
+        StateHasChanged();
+    }
+
+    private void OnCustomAmountChange()
+    {
+        if (!string.IsNullOrEmpty(customAmount) && decimal.TryParse(customAmount, out decimal amount))
+        {
+            selectedAmount = 0;
+        }
+        StateHasChanged();
+    }
+
+    private void ConfirmRecharge()
+    {
+        decimal amount = selectedAmount > 0 ? selectedAmount : decimal.Parse(customAmount);
+        
+        // Simulate recharge process
+        rechargeHistory.Insert(0, new RechargeRecord 
+        { 
+            Date = DateTime.Now, 
+            Amount = amount 
+        });
+
+        // Reset form
+        selectedAmount = 0;
+        customAmount = "";
+        
+        // Show success message (you can replace this with a proper notification)
+        Console.WriteLine($"تم شحن ${amount} بنجاح!");
+        StateHasChanged();
+    }
+
+    public class RechargeRecord
+    {
+        public DateTime Date { get; set; }
+        public decimal Amount { get; set; }
+    }
+}
+
+<style>
+    .amount-btn:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3) !important;
+    }
+
+    .transaction-item:hover {
+        background-color: #F7FAFC;
+        border-radius: 8px;
+    }
+
+    .balance-recharge-container {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .transactions-list {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+
+    /* Custom scrollbar for transactions list */
+    .transactions-list::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .transactions-list::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    .transactions-list::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 10px;
+    }
+
+    .transactions-list::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8;
+    }
+</style>

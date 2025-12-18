@@ -1,0 +1,255 @@
+@using Radzen.Blazor
+@inject DialogService DialogService
+@using Task3.Models
+
+<div class="cards-container" style="padding: 1.5rem; max-width: 1200px; margin: 0 auto;">
+    <!-- Header Section -->
+    <div class="header-section" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <div>
+            <h1 style="color: #2D3748; font-weight: 600; margin-bottom: 0.5rem;">بطاقاتي</h1>
+            <p style="color: #718096; font-size: 1.1rem; margin: 0;">إدارة بطاقات الدفع الخاصة بك</p>
+        </div>
+        
+        <!-- Add New Card Button -->
+        <RadzenButton 
+            Text="إضافة بطاقة جديدة" 
+            Icon="add_circle" 
+            ButtonStyle="ButtonStyle.Primary"
+            Click="@ShowAddCardDialog"
+            Style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 12px; padding: 0.75rem 1.5rem; font-weight: 600; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);" />
+    </div>
+
+    <!-- Cards Grid -->
+    @if (cards.Any())
+    {
+        <RadzenRow Gap="1.5rem">
+            @foreach (var card in cards)
+            {
+                <RadzenColumn Size="12" SizeMD="6" SizeLG="4">
+                    <div class="credit-card @(card.IsDefault ? "default-card" : "")" style="@GetCardStyle(card)">
+                        <div class="card-content">
+                            <!-- Card Header -->
+                            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                                <div class="card-type" style="font-weight: 700; font-size: 1.1rem; color: white;">
+                                    @card.CardType
+                                </div>
+                                @if (card.IsDefault)
+                                {
+                                    <RadzenBadge 
+                                        Text="افتراضية" 
+                                        BadgeStyle="BadgeStyle.Success"
+                                        Style="background: rgba(255, 255, 255, 0.2); color: white; border: none; font-size: 0.8rem; padding: 0.25rem 0.75rem;" />
+                                }
+                            </div>
+
+                            <!-- Card Number -->
+                            <div class="card-number" style="margin-bottom: 0.25rem;">
+                                <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin-bottom: 0.25rem;">رقم البطاقة</div>
+                                <div style="color: white; font-size: 1.3rem; font-weight: 600; letter-spacing: 2px;">
+                                    **** **** **** @card.LastFourDigits
+                                </div>
+                            </div>
+
+                            <!-- Card Footer -->
+                            <div class="card-footer" style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem;">
+                                <div class="expiry-date">
+                                    <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.8rem;">انتهاء الصلاحية</div>
+                                    <div style="color: white; font-size: 1rem; font-weight: 600;">@card.ExpiryDate</div>
+                                </div>
+                                
+                                <div class="card-actions" style="display: flex; gap: 0.5rem;">
+                                    <RadzenButton 
+                                        Icon="edit" 
+                                        ButtonStyle="ButtonStyle.Light" 
+                                        Size="ButtonSize.Small"
+                                        Click="@(() => EditCard(card))"
+                                        Style="background: rgba(255, 255, 255, 0.2); color: white; border: none; min-width: 40px;" />
+                                    <RadzenButton 
+                                        Icon="delete" 
+                                        ButtonStyle="ButtonStyle.Light" 
+                                        Size="ButtonSize.Small"
+                                        Click="@(() => DeleteCard(card))"
+                                        Style="background: rgba(255, 255, 255, 0.2); color: white; border: none; min-width: 40px;" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </RadzenColumn>
+            }
+        </RadzenRow>
+
+        <!-- Statistics -->
+        <div class="stats-section" style="margin-top: 2rem;">
+            <RadzenRow Gap="1rem">
+                <RadzenColumn Size="6" SizeMD="3">
+                    <RadzenCard Style="background: linear-gradient(135deg, #48BB78 0%, #38A169 100%); color: white; border: none; border-radius: 12px;">
+                        <div style="padding: 1rem; text-align: center;">
+                            <RadzenIcon Icon="credit_card" Style="font-size: 2rem; margin-bottom: 0.5rem;" />
+                            <div style="font-size: 1.5rem; font-weight: 700;">@cards.Count</div>
+                            <div style="font-size: 0.9rem;">إجمالي البطاقات</div>
+                        </div>
+                    </RadzenCard>
+                </RadzenColumn>
+                <RadzenColumn Size="6" SizeMD="3">
+                    <RadzenCard Style="background: linear-gradient(135deg, #ED8936 0%, #DD6B20 100%); color: white; border: none; border-radius: 12px;">
+                        <div style="padding: 1rem; text-align: center;">
+                            <RadzenIcon Icon="star" Style="font-size: 2rem; margin-bottom: 0.5rem;" />
+                            <div style="font-size: 1.5rem; font-weight: 700;">@cards.Count(c => c.IsDefault)</div>
+                            <div style="font-size: 0.9rem;">البطاقة الافتراضية</div>
+                        </div>
+                    </RadzenCard>
+                </RadzenColumn>
+                <RadzenColumn Size="6" SizeMD="3">
+                    <RadzenCard Style="background: linear-gradient(135deg, #9F7AEA 0%, #805AD5 100%); color: white; border: none; border-radius: 12px;">
+                        <div style="padding: 1rem; text-align: center;">
+                            <RadzenIcon Icon="visibility" Style="font-size: 2rem; margin-bottom: 0.5rem;" />
+                            <div style="font-size: 1.5rem; font-weight: 700;">@cards.Count(c => c.CardType == "Visa")</div>
+                            <div style="font-size: 0.9rem;">بطاقات Visa</div>
+                        </div>
+                    </RadzenCard>
+                </RadzenColumn>
+                <RadzenColumn Size="6" SizeMD="3">
+                    <RadzenCard Style="background: linear-gradient(135deg, #F56565 0%, #E53E3E 100%); color: white; border: none; border-radius: 12px;">
+                        <div style="padding: 1rem; text-align: center;">
+                            <RadzenIcon Icon="credit_score" Style="font-size: 2rem; margin-bottom: 0.5rem;" />
+                            <div style="font-size: 1.5rem; font-weight: 700;">@cards.Count(c => c.CardType == "Mastercard")</div>
+                            <div style="font-size: 0.9rem;">بطاقات Mastercard</div>
+                        </div>
+                    </RadzenCard>
+                </RadzenColumn>
+            </RadzenRow>
+        </div>
+    }
+    else
+    {
+        <!-- Empty State -->
+        <RadzenCard Style="border: 2px dashed #CBD5E0; background: #F7FAFC; border-radius: 16px;">
+            <div style="padding: 3rem; text-align: center;">
+                <RadzenIcon Icon="credit_card_off" Style="font-size: 4rem; color: #A0AEC0; margin-bottom: 1rem;" />
+                <h3 style="color: #2D3748; margin-bottom: 0.5rem;">لا توجد بطاقات</h3>
+                <p style="color: #718096; margin-bottom: 2rem;">لم تقم بإضافة أي بطاقات دفع بعد</p>
+                <RadzenButton 
+                    Text="إضافة أول بطاقة" 
+                    Icon="add_circle" 
+                    ButtonStyle="ButtonStyle.Primary"
+                    Click="@ShowAddCardDialog"
+                    Style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 12px; padding: 0.75rem 1.5rem; font-weight: 600;" />
+            </div>
+        </RadzenCard>
+    }
+</div>
+
+@code {
+    private List<CardModel> cards = new()
+    {
+        new CardModel 
+        { 
+            CardType = "Visa", 
+            LastFourDigits = "4532", 
+            ExpiryDate = "12/25", 
+            IsDefault = true,
+            CardNumber = "**** **** **** 4532",
+            CardHolder = "أحمد محمد",
+            CVV = "123"
+        },
+        new CardModel 
+        { 
+            CardType = "Mastercard", 
+            LastFourDigits = "8901", 
+            ExpiryDate = "08/26", 
+            IsDefault = false,
+            CardNumber = "**** **** **** 8901",
+            CardHolder = "أحمد محمد",
+            CVV = "456"
+        }
+    };
+
+    private bool isEditing = false;
+    private CardModel newCard = new CardModel();
+    private CardModel cardToEdit = null;
+
+    private string GetCardStyle(CardModel card)
+    {
+        var baseStyle = "border-radius: 16px; padding: 1.5rem; color: white; height: 180px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); transition: all 0.3s; cursor: pointer;";
+        
+        if (card.CardType == "Visa")
+        {
+            return baseStyle + "background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);";
+        }
+        else
+        {
+            return baseStyle + "background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);";
+        }
+    }
+
+    private async void ShowAddCardDialog()
+    {
+        isEditing = false;
+        newCard = new CardModel();
+        await ShowCardDialog();
+    }
+
+    private async void EditCard(CardModel card)
+    {
+        isEditing = true;
+        cardToEdit = card;
+        newCard = new CardModel 
+        { 
+            CardType = card.CardType,
+            LastFourDigits = card.LastFourDigits,
+            ExpiryDate = card.ExpiryDate,
+            IsDefault = card.IsDefault,
+            CardNumber = card.CardNumber,
+            CardHolder = card.CardHolder,
+            CVV = card.CVV
+        };
+        await ShowCardDialog();
+    }
+
+    private async Task ShowCardDialog()
+    {
+        var result = await DialogService.OpenAsync<CardDialog>(
+            isEditing ? "تعديل البطاقة" : "إضافة بطاقة جديدة",
+            new Dictionary<string, object>() 
+            { 
+                { "CardData", newCard },
+                { "IsEditing", isEditing }
+            },
+            new DialogOptions() 
+            { 
+                Style = "min-width: 500px; border-radius: 16px;",
+                CloseDialogOnOverlayClick = true 
+            });
+
+        if (result != null)
+        {
+            await SaveCard(result as CardModel);
+        }
+    }
+
+    private void DeleteCard(CardModel card)
+    {
+        cards.Remove(card);
+        StateHasChanged();
+    }
+
+    private async Task SaveCard(CardModel savedCard)
+    {
+        if (savedCard != null)
+        {
+            if (isEditing)
+            {
+                var index = cards.IndexOf(cardToEdit);
+                if (index != -1)
+                {
+                    cards[index] = savedCard;
+                }
+            }
+            else
+            {
+                cards.Add(savedCard);
+            }
+            StateHasChanged();
+        }
+    }
+}

@@ -1,0 +1,61 @@
+@using Radzen.Blazor
+@using Task3.Models
+
+<RadzenStack Gap="1rem">
+    <div>
+        <label style="display: block; color: #4A5568; margin-bottom: 0.5rem; font-weight: 500;">رقم البطاقة</label>
+        <RadzenTextBox @bind-Value="@CardData.CardNumber" Placeholder="1234 5678 9012 3456" Style="width: 100%;" />
+    </div>
+    
+    <RadzenRow Gap="1rem">
+        <RadzenColumn Size="6">
+            <label style="display: block; color: #4A5568; margin-bottom: 0.5rem; font-weight: 500;">انتهاء الصلاحية</label>
+            <RadzenTextBox @bind-Value="@CardData.ExpiryDate" Placeholder="MM/YY" Style="width: 100%;" />
+        </RadzenColumn>
+        <RadzenColumn Size="6">
+            <label style="display: block; color: #4A5568; margin-bottom: 0.5rem; font-weight: 500;">CVV</label>
+            <RadzenTextBox @bind-Value="@CardData.CVV" Placeholder="123" MaxLength="3" Style="width: 100%;" />
+        </RadzenColumn>
+    </RadzenRow>
+    
+    <div>
+        <label style="display: block; color: #4A5568; margin-bottom: 0.5rem; font-weight: 500;">اسم حامل البطاقة</label>
+        <RadzenTextBox @bind-Value="@CardData.CardHolder" Placeholder="John Doe" Style="width: 100%;" />
+    </div>
+    
+    <RadzenCheckBox @bind-Value="@CardData.IsDefault" Text="تعيين كبطاقة افتراضية" Style="margin-top: 0.5rem;" />
+</RadzenStack>
+
+<div style="display: flex; gap: 0.5rem; justify-content: flex-end; margin-top: 1.5rem;">
+    <RadzenButton Text="إلغاء" ButtonStyle="ButtonStyle.Light" Click="@OnCancel" />
+    <RadzenButton Text="@(IsEditing ? "تحديث" : "إضافة")" ButtonStyle="ButtonStyle.Primary" Click="@OnSave" />
+</div>
+
+@code {
+    [Parameter]
+    public CardModel CardData { get; set; } = new CardModel();
+
+    [Parameter]
+    public bool IsEditing { get; set; }
+
+    [CascadingParameter]
+    public DialogService DialogService { get; set; }
+
+    private void OnSave()
+    {
+        // Set card type based on card number
+        if (!string.IsNullOrEmpty(CardData.CardNumber))
+        {
+            CardData.CardType = CardData.CardNumber.StartsWith("4") ? "Visa" : "Mastercard";
+            CardData.LastFourDigits = CardData.CardNumber.Length >= 4 ? 
+                CardData.CardNumber.Substring(CardData.CardNumber.Length - 4) : "0000";
+        }
+
+        DialogService.Close(CardData);
+    }
+
+    private void OnCancel()
+    {
+        DialogService.Close(null);
+    }
+}

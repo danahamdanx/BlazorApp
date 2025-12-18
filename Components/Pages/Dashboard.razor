@@ -1,0 +1,36 @@
+@page "/dashboard"
+@using Radzen
+@using Task3.Components
+
+<PageTitle>Dashboard</PageTitle>
+
+<RadzenCard Style="padding:20px;">
+    <h3>Dashboard</h3>
+
+    <RadzenTabs @bind-SelectedIndex="selectedIndex">
+        <RadzenTabsItem Text="شحن الرصيد">
+            @if (selectedIndex == 0)
+            {
+                <Balance />
+            }
+        </RadzenTabsItem>
+
+        <RadzenTabsItem Text="الحزم">
+            @if (selectedIndex == 1)
+            {
+                <Bundles />
+            }
+        </RadzenTabsItem>
+
+        <RadzenTabsItem Text="البطاقات">
+            @if (selectedIndex == 2)
+            {
+                <Cards />
+            }
+        </RadzenTabsItem>
+    </RadzenTabs>
+</RadzenCard>
+
+@code {
+    private int selectedIndex = 0;
+}
