@@ -1,0 +1,173 @@
+@page "/view-user/{UserId:int}"
+@using Radzen
+@using Radzen.Blazor
+
+<PageTitle>View User</PageTitle>
+
+<RadzenCard Class="shadow-lg p-6 rounded-xl">
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold text-gray-800">User Details</h2>
+        <RadzenButton Text="Back" Icon="arrow_back" Click="@GoBack" ButtonStyle="ButtonStyle.Secondary" />
+    </div>
+
+    @if (user != null)
+    {
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <RadzenCard Class="p-4 rounded-lg">
+                <h3 class="text-lg font-semibold mb-4 text-gray-700">Basic Info</h3>
+                <p><strong>Username:</strong> @user.Name</p>
+                <p><strong>Full Name:</strong> @user.Fullname</p>
+                <p><strong>Phone:</strong> @(user.UserPhone ?? "N/A")</p>
+                <p><strong>Role:</strong> <RadzenBadge Text="@user.UserType" BadgeStyle="@GetRoleBadgeStyle(user.UserType)" /></p>
+            </RadzenCard>
+
+            <RadzenCard Class="p-4 rounded-lg">
+                <h3 class="text-lg font-semibold mb-4 text-gray-700">Financial Info</h3>
+                <p><strong>Balance:</strong> @user.Balance.ToString("N2")</p>
+                <p><strong>Cash:</strong> @user.Cash.ToString("N2")</p>
+                <p><strong>Category:</strong> @(user.UserCategory ?? "N/A")</p>
+                <p><strong>Status:</strong> <RadzenBadge Text="@(user.Balance > 0 ? "Active" : "Inactive")" BadgeStyle="@(user.Balance > 0 ? BadgeStyle.Success : BadgeStyle.Danger)" /></p>
+            </RadzenCard>
+        </div>
+
+    }
+    else
+    {
+        <div class="text-center py-8 text-gray-500">
+            <RadzenIcon Icon="person_off" Style="font-size:48px; margin-bottom:16px;" />
+            <p>User not found for ID: @UserId</p>
+            <RadzenButton Text="Back to Users" Icon="arrow_back" Click="@GoBack" ButtonStyle="ButtonStyle.Secondary" Class="mt-4" />
+        </div>
+    }
+</RadzenCard>
+
+
+@code {
+    [Parameter] public int UserId { get; set; }
+    [Inject] NavigationManager NavigationManager { get; set; }
+    [Inject] DialogService DialogService { get; set; }
+    [Inject] NotificationService NotificationService { get; set; }
+
+    private User user;
+
+    protected override void OnInitialized()
+    {
+        LoadUserData();
+    }
+
+    protected override void OnParametersSet()
+    {
+        LoadUserData();
+    }
+
+    private void LoadUserData()
+    {
+        // In a real application, you would fetch this from a service/API
+        var sampleUsers = new List<User>
+        {
+            new User { UserId = 1, Name = "user1", Fullname = "Mohammad Ahmed", Balance = 100.2m, Dept = 500m, 
+                      UserType = "Customer", CreatedDate = "2024-01-15", UserPhone = "+1234567890",
+                      UserCategory = "Standard", RealBalance = 100.2m, Cash = 50.0m, UserVillage = "Downtown",
+                      TwoStepsEnabled = true, UserNumberLimit = 5, ResetCodeTries = 0, WhatsAppLink = "https://wa.me/1234567890" },
+            new User { UserId = 12, Name = "user4", Fullname = "Ahmad Ali", Balance = 500.6m, Dept = 700m, 
+                      UserType = "Reseller", CreatedDate = "2024-02-20", UserPhone = "+1234567891",
+                      UserCategory = "Premium", RealBalance = 500.6m, Cash = 200.0m, UserVillage = "Uptown",
+                      TwoStepsEnabled = false, UserNumberLimit = 50, ResetCodeTries = 2 },
+            new User { UserId = 34, Name = "user44", Fullname = "Waleed Hassan", Balance = 600.3m, Dept = 900m, 
+                      UserType = "Admin", CreatedDate = "2024-01-10", UserPhone = "+1234567892",
+                      UserCategory = "Administrative", RealBalance = 600.3m, Cash = 300.0m, UserVillage = "City Center",
+                      TwoStepsEnabled = true, UserNumberLimit = 1000, ResetCodeTries = 0 },
+            new User { UserId = 788, Name = "user366", Fullname = "Khaled Omar", Balance = 775.4m, Dept = 2000m, 
+                      UserType = "Customer", CreatedDate = "2024-03-05", UserPhone = "+1234567893",
+                      UserCategory = "Standard", RealBalance = 775.4m, Cash = 100.0m, UserVillage = "Suburb",
+                      TwoStepsEnabled = false, UserNumberLimit = 10, ResetCodeTries = 1 },
+            new User { UserId = 45, Name = "sara_k", Fullname = "Sara Khalid", Balance = 1200.0m, Dept = 300m, 
+                      UserType = "Reseller", CreatedDate = "2024-02-28", UserPhone = "+1234567894",
+                      UserCategory = "Premium", RealBalance = 1200.0m, Cash = 500.0m, UserVillage = "City Center",
+                      TwoStepsEnabled = true, UserNumberLimit = 100, ResetCodeTries = 0, WhatsAppLink = "https://wa.me/1234567894" },
+            new User { UserId = 67, Name = "moh_tech", Fullname = "Mohammed Tech", Balance = 50.0m, Dept = 1500m, 
+                      UserType = "Customer", CreatedDate = "2024-03-12", UserPhone = "+1234567895",
+                      UserCategory = "Basic", RealBalance = 50.0m, Cash = 25.0m, UserVillage = "Tech Park",
+                      TwoStepsEnabled = false, UserNumberLimit = 3, ResetCodeTries = 3 }
+        };
+
+        user = sampleUsers.FirstOrDefault(u => u.UserId == UserId);
+        
+        // Debug information - you can remove this in production
+        Console.WriteLine($"Looking for user ID: {UserId}");
+        Console.WriteLine($"Found user: {user != null}");
+        if (user != null)
+        {
+            Console.WriteLine($"User details: {user.Name} - {user.Fullname}");
+        }
+    }
+
+    private void GoBack()
+    {
+        NavigationManager.NavigateTo("/users");
+    }
+
+    private void EditUser(int userId)
+    {
+        NavigationManager.NavigateTo($"/edit-user/{userId}");
+    }
+
+    private async void DeleteUser(User userToDelete)
+    {
+        var result = await DialogService.Confirm($"Are you sure you want to delete {userToDelete.Fullname}?", 
+            "Delete User", new ConfirmOptions() { OkButtonText = "Yes", CancelButtonText = "No" });
+
+        if (result == true)
+        {
+            // In real app, call API to delete user
+            NotificationService.Notify(new NotificationMessage
+            {
+                Severity = NotificationSeverity.Success,
+                Summary = "Success",
+                Detail = $"User {userToDelete.Fullname} deleted successfully",
+                Duration = 3000
+            });
+            GoBack();
+        }
+    }
+
+    private BadgeStyle GetRoleBadgeStyle(string userType)
+    {
+        return userType?.ToLower() switch
+        {
+            "admin" => BadgeStyle.Danger,
+            "reseller" => BadgeStyle.Warning,
+            "customer" => BadgeStyle.Info,
+            _ => BadgeStyle.Secondary
+        };
+    }
+
+    private string GetBalanceClass(decimal balance) => balance >= 500 ? "text-success font-bold" : "text-warning";
+    private string GetDeptClass(decimal dept) => dept >= 1000 ? "text-danger font-bold" : "text-info";
+    private string GetDiffClass(decimal diff) => diff >= 0 ? "text-danger" : "text-success";
+
+    public class User
+    {
+        public int UserId { get; set; }
+        public string Name { get; set; }
+        public string Fullname { get; set; }
+        public string UserPhone { get; set; }
+        public string UserPassword { get; set; }
+        public string CreatedDate { get; set; }
+        public string LastLoginDate { get; set; }
+        public string UserType { get; set; }
+        public string UserCategory { get; set; }
+        public decimal Balance { get; set; }
+        public decimal RealBalance { get; set; }
+        public decimal Cash { get; set; }
+        public string UserVillage { get; set; }
+        public string DeviceToken { get; set; }
+        public string VerifyCode { get; set; }
+        public bool TwoStepsEnabled { get; set; }
+        public int ResetCodeTries { get; set; }
+        public int UserNumberLimit { get; set; }
+        public string ResetCodeSentTime { get; set; }
+        public string WhatsAppLink { get; set; }
+        public decimal Dept { get; set; }
+    }
+}
